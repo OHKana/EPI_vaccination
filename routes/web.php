@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\Noticescontroller;
+use App\Http\Controllers\Servicescontroller;
+use App\Http\Controllers\Helplinecontroller;
+use App\Http\Controllers\Registrationcontroller;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +20,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
+
+Route::get('/home',[Homecontroller::class,'list'])->name('home');
+
+Route::get('/notices',[Noticescontroller::class,'list'])->name('notices');
+
+Route::get('/services',[Servicescontroller::class,'list'])->name('services');
+
+Route::get('/helpline',[Helplinecontroller::class,'list'])->name('helpline');
+
+Route::get('/registration',[Registrationcontroller::class,'list'])->name('registration');
+
+Route::post('/registration/',[Registrationcontroller::class,'create'])->name('registration');
+
