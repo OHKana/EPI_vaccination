@@ -3,25 +3,29 @@
       <h3 class="float-md-start mb-0">EPI Vaccination Management</h3>
         <div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-        <ul class="nav ">
+        <ul class="nav">
             <li class="nav item nav-style">
-            <a class="nav-link " aria-current="page" href="{{route('home')}}">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Profile</a>
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link " href="{{route('notices')}}">Notices</a>
+            <a class="nav-link" href="{{route('patientsList')}}">Patients List</a>
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link " href="{{route('services')}}">Services</a>
+            <a class="nav-link" href="{{route('healthWorkerList')}}">Health Worker List</a>
+            </li>
+            {{--
+            <li class="nav item nav-style">
+            <a class="nav-link" href="{{route('helpline')}}">Helpline</a>
+            </li> --}}
+
+            <li class="nav item nav-style">
+            <a class="nav-link " href="{{route('registration')}}">Registration</a>
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link " href="{{route('helpline')}}">Helpline</a>
-            </li>
-
-            <li class="nav item nav-style">
-            <a class="nav-link" href="#">Sing In</a>
+            <a class="nav-link" href="#">Log Out</a>
             </li>
         </ul>
         </nav>

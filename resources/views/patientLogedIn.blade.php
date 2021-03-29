@@ -9,8 +9,8 @@
     <title>EPI Vaccination</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
-    <link href="/css/nav.css" rel="stylesheet">
 
+    <link href="/css/nav.css" rel="stylesheet">
 
 
     <!-- Bootstrap core CSS -->
@@ -47,10 +47,10 @@
   </head>
   <body class="d-flex text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 
-    @include('partials.header')
+    @include('partials.patientHeader')
     @include('partials.sidebar')
 
 

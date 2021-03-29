@@ -25,6 +25,7 @@
 <meta name="theme-color" content="#7952b3">
 
 
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -47,10 +48,10 @@
   </head>
   <body class="d-flex text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 
-    @include('partials.header')
+    @include('partials.healthWorkerHeader')
     @include('partials.sidebar')
 
 

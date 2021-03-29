@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    public function      list()
+    public function list()
     {
         return view('content.registration');
      }
-     public function create (request $request){
-        //dd($request->all());
-        registration::create([
-           'name'=>$request->name,
-           'description'=>$request->description
+    //  public function create (request $request){
+    //     //dd($request->all());
+    //     registration::create([
+    //        'name'=>$request->name,
+    //        'description'=>$request->description
 
-        ]
+    //     ]
 
-        );
-        return redirect() -> back();
-    }
+    //     );
+    //     return redirect() -> back();
+    // }
 }

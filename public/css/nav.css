@@ -1,0 +1,16 @@
+.nav-style{
+    padding: 5px;
+    transition: .25s all ease-in-out;
+}
+
+.nav-style:hover{
+    padding: 1px;
+    background-color: aquamarine;
+
+}
+
+.slider-height{
+
+
+    height: 100vh;
+}
