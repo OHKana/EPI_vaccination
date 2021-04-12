@@ -23,10 +23,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title bg-dark w-100" id="exampleModalLabel">New Patients Registation form:</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="post" action="{{route('registration')}}" class="container">
+        <form method="post" action="{{route('registration.patient')}}" class="container">
             @csrf
         <div class="modal-body bg-dark">
 
@@ -91,6 +91,10 @@
                     <label for="exampleInputEmail1" class="form-label">Registration Date</label>
                     <input type="date" class="form-control" name="regDate" placeholder="Enter Todays date ">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Category</label>
+                    <input type="text" class="form-control" name="category" placeholder="Select Category">
+                </div>
 
 
 
@@ -113,10 +117,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Registation</h5>
+          <h5 class="modal-title bg-dark w-100" id="exampleModalLabel">New Health Assistant Registation form:</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="post" action="{{route('registration.assistant')}}" class="container">
+        <form method="post" action="{{route('registration.assistant')}}" class="container" enctype="multipart/form-data">
             @csrf
         <div class="modal-body bg-dark">
                 <div class="mb-3">
@@ -171,8 +175,8 @@
                 </div>
 
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" placeholder="Enter any Comment ">
+                    <label for="exampleInputEmail1" class="form-label">Upload Image</label>
+                    <input type="file" name="Image" class="from-control">
                 </div>
 
 

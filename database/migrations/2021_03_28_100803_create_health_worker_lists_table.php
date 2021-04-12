@@ -22,7 +22,7 @@ class CreateHealthWorkerListsTable extends Migration
             $table->string('Email_Address');
             $table->string('address');
             $table->string('Vaccination_Area');
-            $table->string('Description');
+            $table->text('file')->nullable();
             $table->timestamps();
         });
     }

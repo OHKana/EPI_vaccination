@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>EPI Vaccination</title>
+    <title >EPI Vaccination</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link href="/css/nav.css" rel="stylesheet">

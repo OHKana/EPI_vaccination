@@ -24,6 +24,7 @@ class CreatePatientslistsTable extends Migration
             $table->string('address');
             $table->string('vaccination_Area');
             $table->date('regDate');
+            $table->string('category');
             $table->timestamps();
         });
     }

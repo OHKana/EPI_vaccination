@@ -9,7 +9,7 @@
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link" href="#">Schedule</a>
+            <a class="nav-link" href="{{route('schedule')}}">Schedule</a>
             </li>
 
             <li class="nav item nav-style">

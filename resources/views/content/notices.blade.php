@@ -2,6 +2,9 @@
 
 @section('content')
 
+<div class="title text-center mb-3  bg-white text-dark">
+    <h3 class="font-weight-bolder p-2">Notice</h3>
+     </div>
 
 
 

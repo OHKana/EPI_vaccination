@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BabyTikaChartController;
+use App\Http\Controllers\ChildVaccineScheduleController;
 use App\Http\Controllers\TeenageTikaChartController;
 use App\Http\Controllers\PregnancyTikaChartController;
 use App\Http\Controllers\Homecontroller;
@@ -9,8 +10,11 @@ use App\Http\Controllers\Servicescontroller;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\PatientsListController;
 use App\Http\Controllers\HealthWorkerListController;
+use App\Http\Controllers\ScheduleController;
 
 use App\Http\Controllers\Registrationcontroller;
+use App\Http\Controllers\TeenageVaccineScheduleController;
+use App\Models\ChildVaccineSchedule;
 use App\Models\HealthWorkerLIst;
 use Illuminate\Support\Facades\Route;
 
@@ -39,11 +43,22 @@ Route::get('/helpline',[Helplinecontroller::class,'list'])->name('helpline');
 
 Route::get('/patientsList',[PatientsListController::class,'list'])->name('patientsList');
 
+Route::get('/childvaccineschedule',[ChildVaccineScheduleController::class,'list'])->name('childvaccineschedule');
+Route::post('/childvaccineschedule/c',[ChildVaccineScheduleController::class,'create'])->name('childvaccineschedule.create');
+
 Route::get('/healthworkerList',[HealthWorkerListController::class,'list'])->name('healthWorkerList');
 
 Route::get('/babytikachart',[BabyTikaChartController::class,'list'])->name('babyTikaChart');
+Route::post('/babytikachartlist',[BabyTikaChartController::class,'create'])->name('babyTikaChart.create');
+
 
 Route::get('/teenagetikachart',[TeenageTikaChartController::class,'list'])->name('teenageTikaChart');
+Route::post('/teenagetikachart/t',[TeenageTikaChartController::class,'create'])->name('teenageTikaChart.create');
+
+//teenage vaccine schedule
+Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
+Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
+
 
 Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');
 
@@ -51,8 +66,12 @@ Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->
 
 Route::get('/registration',[Registrationcontroller::class,'list'])->name('registration');
 
-Route::post('/registration',[HealthWorkerListController::class,'create'])->name('registration.assistant');
-Route::post('/registration',[PatientsListController::class,'create'])->name('registration.assistant');
+Route::post('/registration/patient',[HealthWorkerListController::class,'create'])->name('registration.assistant');
+Route::post('/registration/assistant',[PatientsListController::class,'create'])->name('registration.patient');
+
+
+
+Route::get('/schedule',[ScheduleController::class,'list'])->name('schedule');
 
 
 

@@ -14,6 +14,28 @@ class HealthWorkerListController extends Controller
 
 
     public function create(Request $request){
+
+$file_name='';
+// step:1 check req has file
+
+if($request->hasFile('Image'))
+{
+    // file is valid?
+
+    $file=$request->file('Image');
+    if($file->isvalid());
+    {
+        // generate unique file name
+
+        $file_name=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+
+        // store image local directory
+   
+        $file->storeAs('photo',$file_name);
+    }
+}
+
+
         // dd($request-> all());
         HealthWorkerLIst::create([
             'User_Id' => $request -> userId,
@@ -24,11 +46,12 @@ class HealthWorkerListController extends Controller
             'Email_Address' => $request -> email,
             'address' => $request -> address,
             'Vaccination_Area' => $request -> vaccinationArea,
-            'Description' => $request -> description
+            'file' => $file_name,
         ]);
 
         return redirect()->back();
 
 
     }
+
 }

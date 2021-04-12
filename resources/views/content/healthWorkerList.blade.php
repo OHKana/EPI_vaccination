@@ -17,7 +17,7 @@
         <th scope="col">Email Address</th>
         <th scope="col">Address</th>
         <th scope="col">Vaccination Area</th>
-        <th scope="col">Descrption</th>
+        <th scope="col">Image</th>
       </tr>
     </thead>
     <tbody>
@@ -33,10 +33,15 @@
         <td>{{ $data->Email_Address}}</td>
         <td>{{ $data->address}}</td>
         <td>{{ $data->Vaccination_Area}}</td>
-        <td>{{ $data->Description}}</td>
+        <td>
+            <img style="width: 100px;" src="{{url('/files/photo/'.$data->file)}}" alt="">
+        </td>
+
       </tr>
       @endforeach
     </tbody>
+
+
   </table>
 
 
