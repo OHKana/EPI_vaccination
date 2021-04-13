@@ -2,13 +2,7 @@
 
 @section('content')
 
-{{-- button --}}
-{{-- <div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#">
-      Update
-     </button>
-    </div> --}}
-
+    <h2>Child Vaccine Schedule</h2>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

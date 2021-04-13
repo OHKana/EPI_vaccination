@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 use App\Models\teenageVaccine;
 use Illuminate\Http\Request;
 
-class TeenageTikaChartController extends Controller
+class TeenageVaccineChartController extends Controller
 {
     public function      list()
     {
         $teenage = teenageVaccine::all();
-        return view('content.teenageTikaChart',compact('teenage'));
+        return view('content.TeenageVaccineChart',compact('teenage'));
      }
      public function create(Request $request)
      {
@@ -24,4 +24,4 @@ class TeenageTikaChartController extends Controller
 
          return redirect()->back();
      }
-}
+ }

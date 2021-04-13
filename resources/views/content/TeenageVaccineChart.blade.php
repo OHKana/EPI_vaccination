@@ -59,7 +59,7 @@
 
                 {{-- form --}}
 
-                <form class="container bg-light" method="POST" action="{{ route('teenageTikaChart.create') }}">
+                <form class="container bg-light" method="POST" action="{{ route('TeenageVaccineChart.create') }}">
                     @csrf
                     <div class="modal-body">
 

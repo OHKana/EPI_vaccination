@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\BabyTikaChartController;
+use App\Http\Controllers\ChildVaccineChartController;
 use App\Http\Controllers\ChildVaccineScheduleController;
-use App\Http\Controllers\TeenageTikaChartController;
+use App\Http\Controllers\TeenageVaccineChartController;
 use App\Http\Controllers\PregnancyTikaChartController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\Noticescontroller;
@@ -29,11 +29,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+// Route::get('/', function () {
+//     return view('master');
+// });
 
-Route::get('/home',[Homecontroller::class,'list'])->name('home');
+Route::get('/',[Homecontroller::class,'list'])->name('home');
 
 Route::get('/notices',[Noticescontroller::class,'list'])->name('notices');
 
@@ -48,16 +48,16 @@ Route::post('/childvaccineschedule/c',[ChildVaccineScheduleController::class,'cr
 
 Route::get('/healthworkerList',[HealthWorkerListController::class,'list'])->name('healthWorkerList');
 
-Route::get('/babytikachart',[BabyTikaChartController::class,'list'])->name('babyTikaChart');
-Route::post('/babytikachartlist',[BabyTikaChartController::class,'create'])->name('babyTikaChart.create');
+Route::get('/ChildVaccineChart',[ChildVaccineChartController::class,'list'])->name('ChildVaccineChart');
+Route::post('/ChildVaccineChart',[ChildVaccineChartController::class,'create'])->name('ChildVaccineChart.create');
 
 
-Route::get('/teenagetikachart',[TeenageTikaChartController::class,'list'])->name('teenageTikaChart');
-Route::post('/teenagetikachart/t',[TeenageTikaChartController::class,'create'])->name('teenageTikaChart.create');
+Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])->name('TeenageVaccineChart');
+Route::post('/teenageVaccineChart/t',[TeenageVaccineChartController::class,'create'])->name('TeenageVaccineChart.create');
 
 //teenage vaccine schedule
-Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
-Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
+Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('TeenageVaccineSchedule');
+Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('TeenageVaccineSchedule.create');
 
 
 Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');

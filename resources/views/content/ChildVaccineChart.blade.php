@@ -20,7 +20,7 @@
 
 {{-- form --}}
 
-<form class="container bg-light" method="POST" action="{{route('babyTikaChart.create')}}">
+<form class="container bg-light" method="POST" action="{{route('ChildVaccineChart.create')}}">
 @csrf
         <div class="modal-body">
 

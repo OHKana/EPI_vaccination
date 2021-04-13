@@ -4,7 +4,7 @@
 
 <h2>Teenage Vaccine Schedule</h2>
 
-
+<br>
     <div>
         <table class="table table-light">
             <thead>
@@ -59,7 +59,7 @@
                 <form class="container bg-light" method="POST" action="{{ route('teenageVaccineSchedule.create') }}">
                     @csrf
                     <div class="modal-body">
-                        
+
                                     <div class="form-group text-dark">
                                         <label for="exampleInputEmail3 ">Vaccine recieve Date</label>
                                         <input type="date" class="form-control" name="V_rcv_date" id="exampleInputEmail1"

@@ -16,8 +16,8 @@
         </a>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="{{route('babyTikaChart')}}">Child vaccine Chart</a></li>
-          <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="{{route('teenageTikaChart')}}">Teenage vaccine chart</a></li>
+    <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="{{route('ChildVaccineChart')}}">Child vaccine Chart</a></li>
+          <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="{{route('TeenageVaccineChart')}}">Teenage vaccine chart</a></li>
           {{-- <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="{{route('pregnancyTikaChart')}}">Pregnancy vaccine chart</a></li> --}}
         </ul>
 
