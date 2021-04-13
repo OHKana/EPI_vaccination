@@ -9,6 +9,7 @@
         <table class="table table-light">
             <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Vaccine Dose Name</th>
                     <th scope="col">Schedule</th>
                     <th scope="col">Eligible Date</th>
@@ -24,8 +25,9 @@
 
 
                     <tr>
-                        <th scope="row">{{ $data->V_d_Name }}</th>
-                        <td>{{ $data->Schedule }}</td>
+                        <th scope="row">{{ $data->id }}</th>
+                       <td>hfhf</td>
+                        <td>trt</td>
                         <td>{{ $data->eligible_date }}</td>
                         <td>{{ $data->V_rcv_date }}</td>
 
@@ -57,28 +59,12 @@
                 <form class="container bg-light" method="POST" action="{{ route('teenageVaccineSchedule.create') }}">
                     @csrf
                     <div class="modal-body">
-
-
-                        <div class="form-group text-dark">
-                            <label for="exampleInputEmail3 ">Vaccine Dose Name</label>
-                            <input type="text" class="form-control" name="V_d_Name" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter Dose Name">
-
-                            <div class="form-group text-dark">
-                                <label for="exampleInputEmail3 ">Schedule</label>
-                                <input type="text" class="form-control" name="Schedule" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Enter schedule">
-
-                                <div class="form-group text-dark">
-                                    <label for="exampleInputEmail3 ">Eligible for Vaccine</label>
-                                    <input type="date" class="form-control" name="eligible_date" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Eligible Date">
-
+                        
                                     <div class="form-group text-dark">
                                         <label for="exampleInputEmail3 ">Vaccine recieve Date</label>
                                         <input type="date" class="form-control" name="V_rcv_date" id="exampleInputEmail1"
                                             aria-describedby="emailHelp" placeholder="Enter Recive date">
-
+                                    </div>
 
                                         <br>
 

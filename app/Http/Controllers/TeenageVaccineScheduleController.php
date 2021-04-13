@@ -18,8 +18,7 @@ class TeenageVaccineScheduleController extends Controller
      {
          // dd($request-> all());
          teenageVaccine::create([
-             'V_d_Name' => $request->V_d_Name,
-             'Schedule' => $request->Schedule,
+             'V_id' => $request->V_id,
              'eligible_date' => $request->eligible_date,
              'V_rcv_date' => $request->V_rcv_date,
 

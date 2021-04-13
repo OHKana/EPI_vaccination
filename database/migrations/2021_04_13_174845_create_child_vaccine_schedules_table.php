@@ -14,10 +14,11 @@ class CreateChildVaccineSchedulesTable extends Migration
     public function up()
     {
         Schema::create('child_vaccine_schedules', function (Blueprint $table) {
-            // $table->id();
-            $table->id('V_Name');
-            $table->string('Eligible_date');
+            $table->id();
+            $table->integer('V_id');
+            $table->string('eligible_d')->nullable();
             $table->string('fst_d')->nullable();
+
             $table->string('snd_d')->nullable();
             $table->string('trd_d')->nullable();
             $table->string('fth_d')->nullable();

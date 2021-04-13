@@ -23,10 +23,7 @@
 {{-- form --}}
 <form method="POST" action="{{route('childvaccineschedule.create')}}">
     @csrf
-    <div class="form-group">
-      <label for="exampleInputEmail1">Vaccine Name</label>
-      <input type="text" class="form-control" name="V_Name" aria-describedby="emailHelp" placeholder="Enter vaccine Name">
-    </div>
+
     <div class="form-group">
       <label for="exampleInputPassword1">Eligible For vaccine Date</label>
       <input type="text" class="form-control" name="Eligible_date" placeholder="Eligible date">
@@ -67,6 +64,7 @@
     <table class="table table-light">
         <thead>
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">Vaccine Name</th>
             <th scope="col">Eligible For Vaccine Date</th>
             <th scope="col">1st Dose Recive date</th>
@@ -83,7 +81,11 @@
 
 
           <tr>
-            <th scope="row">{{ $data->V_Name}}</th>
+            <th scope="row">{{ $data->id}}</th>
+            @foreach (  $cdoses as $item )
+            <td>{{ $item->V_name}}</td>
+            @endforeach
+
             <td>{{ $data->Eligible_date}}</td>
             <td>{{ $data->fst_d}}</td>
             <td>{{ $data->snd_d}}</td>
