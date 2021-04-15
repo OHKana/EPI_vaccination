@@ -51,9 +51,9 @@
         <td>{{ $data->category}}</td>
         <td>
             @if ($data->category == 'Child')
-             <a class="btn btn-success" href="{{route('childvaccineschedule')}}">Check</a>
+             <a class="btn btn-success" href="{{route('patientsList.checkChild',$data['id'])}}">Check</a>
             @elseif ($data->category == 'Teenage')
-             <a class="btn btn-success" href="{{route('teenageVaccineSchedule')}}">Check</a>
+             <a class="btn btn-success" href="{{route('patientsList.checkTeenge',$data['id'])}}">Check</a>
              @else
              <a class="btn btn-success" href="#">Check</a>
             @endif

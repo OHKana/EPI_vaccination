@@ -23,6 +23,7 @@ class CreateHealthWorkerListsTable extends Migration
             $table->string('address');
             $table->string('Vaccination_Area');
             $table->text('file')->nullable();
+            $table->string('password')->default('epi2021');
             $table->timestamps();
         });
     }

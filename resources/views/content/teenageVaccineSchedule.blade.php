@@ -2,10 +2,16 @@
 
 @section('content')
 
-<h2>Teenage Vaccine Schedule</h2>
 
-<br>
+{{-- @dd($patients); --}}
+        {{-- <h3>Patient Name: {{ $patients->patients_Name }} <span>Registration NO: {{ $patients->Registration_No }}</span></h3> --}}
+
+
     <div>
+        <h2>Teenage Vaccine Schedule</h2>
+        <h3>Patient Name: {{$patients->patients_Name}}</h3>
+        <h4>Registration No:{{$patients->Registration_No}}</h4>
+        <br>
         <table class="table table-light">
             <thead>
                 <tr>
@@ -14,7 +20,6 @@
                     <th scope="col">Schedule</th>
                     <th scope="col">Eligible Date</th>
                     <th scope="col">Vaccine recieve Date</th>
-
                     <th scope="col">Action</th>
 
 
@@ -23,26 +28,28 @@
             <tbody>
                 @foreach ($teenage as $data)
 
-
                     <tr>
                         <th scope="row">{{ $data->id }}</th>
-                       <td>hfhf</td>
-                        <td>trt</td>
+                        <td>{{ $data->V_d_Name }}</td>
+                        <td>{{ $data->Schedule }}</td>
                         <td>{{ $data->eligible_date }}</td>
                         <td>{{ $data->V_rcv_date }}</td>
-
                         <td>
-                            <a class="btn btn-success" href="#">Update</a>
+                            <div>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal3">
+                                    Update
+                                </button>
+                            </div>
+
                         </td>
-
-
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
     </div>
-
+    <br>
 
 
     <!-- Modal -->
@@ -59,14 +66,19 @@
                 <form class="container bg-light" method="POST" action="{{ route('teenageVaccineSchedule.create') }}">
                     @csrf
                     <div class="modal-body">
+                                <div class="form-group text-dark">
+                                    <label for="exampleInputEmail3 ">Eligible Date</label>
+                                    <input type="date" class="form-control" name="eligible_date" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter Eligible date">
+                                </div>
 
-                                    <div class="form-group text-dark">
+                                <div class="form-group text-dark">
                                         <label for="exampleInputEmail3 ">Vaccine recieve Date</label>
                                         <input type="date" class="form-control" name="V_rcv_date" id="exampleInputEmail1"
                                             aria-describedby="emailHelp" placeholder="Enter Recive date">
-                                    </div>
+                                </div>
 
-                                        <br>
+                                <br>
 
                                         <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal3">

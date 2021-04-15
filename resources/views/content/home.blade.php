@@ -15,7 +15,7 @@
         <img class="w-100 slider-height" src="https://cdn.sanity.io/images/0vv8moc6/drugtopics/fa0ef299d4b5d2e7b19394eebe5f53476e426f84-1000x500.png?auto=format" class="d-block w-100" alt="influenza">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h2>IT IS THE RIGHT OF A CHILD TO BE IMMUNIZED IN FULL</h2>
         </div>
       </div>
       <div class="carousel-item">

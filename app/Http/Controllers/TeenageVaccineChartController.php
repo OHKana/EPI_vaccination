@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\teenageVaccine;
+use App\Models\TeenageVaccineSchedule;
 use Illuminate\Http\Request;
 
 class TeenageVaccineChartController extends Controller
@@ -18,7 +19,10 @@ class TeenageVaccineChartController extends Controller
              'V_d_Name' => $request->V_d_Name,
              'Schedule' => $request->Schedule,
              'category' => $request->category,
-
+         ]);
+         TeenageVaccineSchedule::create([
+            'V_d_Name' => $request->V_d_Name,
+            'Schedule' => $request->Schedule
 
          ]);
 

@@ -1,6 +1,6 @@
 <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">EPI Vaccination Management</h3>
+      <h3 class="float-md-start mb-0" style="font-family: 'Times New Roman', Times, serif;">EPI Vaccination Management</h3>
         <div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav">

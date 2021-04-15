@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ChildVaccineSchedule;
 use App\Models\PatientsList;
+use App\Models\TeenageVaccineSchedule;
 use Illuminate\Http\Request;
 
 class PatientsListController extends Controller
@@ -13,6 +15,21 @@ class PatientsListController extends Controller
         $patients = Patientslist::all();
              return view('content.patientsList', compact('patients'));
     }
+
+    public function      checkChild($id)
+    {
+        $doses= ChildVaccineSchedule::all();
+        $patients = Patientslist::find($id);
+        return view('content.childvaccineschedule', compact('patients','doses'));
+    }
+
+    public function      checkTeenage($id)
+    {
+        $teenage= TeenageVaccineSchedule::all();
+        $patients = Patientslist::find($id);
+        return view('content.teenageVaccineSchedule', compact('patients','teenage'));
+    }
+
 
     public function create(Request $request)
     {

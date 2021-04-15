@@ -32,7 +32,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Registration No:</label>
-                    <input type="text" class="form-control" name="Registration_No" placeholder="Enter User Id" >
+                    <input type="number" class="form-control" name="Registration_No" placeholder="Enter User Id" >
                 </div>
 
 
