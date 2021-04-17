@@ -11,7 +11,7 @@ use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\PatientsListController;
 use App\Http\Controllers\HealthWorkerListController;
 use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignInUpController;
 
 use App\Http\Controllers\Registrationcontroller;
 use App\Http\Controllers\TeenageVaccineScheduleController;
@@ -44,10 +44,11 @@ Route::get('/services',[Servicescontroller::class,'list'])->name('services');
 Route::get('/helpline',[Helplinecontroller::class,'list'])->name('helpline');
 
 
-// sign in
-Route::get('/signIn',[SignInController::class,'list'])->name('SignIn');
-Route::post('/login',[SignInController::class,'login'])->name('login');
-Route::get('/logout',[SignInController::class,'logout'])->name('logout');
+// healt worker sign in sign up
+Route::get('/healthWorkerSignInSignUp',[SignInUpController::class,'show'])->name('healthWorkerSignInUp');
+Route::post('/login',[SignInUpController::class,'login'])->name('login');
+Route::get('/logout',[SignInUpController::class,'logout'])->name('logout');
+
 
 // patients list
 Route::get('/patientsList',[PatientsListController::class,'list'])->name('patientsList');

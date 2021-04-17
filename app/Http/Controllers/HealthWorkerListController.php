@@ -30,14 +30,14 @@ if($request->hasFile('Image'))
         $file_name=date('Ymdhms').'.'.$file->getClientOriginalExtension();
 
         // store image local directory
-   
+
         $file->storeAs('photo',$file_name);
     }
 }
-
+        $password="epi2021";
 
         // dd($request-> all());
-        HealthWorkerLIst::create([
+        HealthWorkerList::create([
             'User_Id' => $request -> userId,
             'HealthAssistant_Name' => $request -> HealthAssistant_Name,
             'dob' => $request -> dob,
@@ -47,6 +47,7 @@ if($request->hasFile('Image'))
             'address' => $request -> address,
             'Vaccination_Area' => $request -> vaccinationArea,
             'file' => $file_name,
+            'password'=>bcrypt($password),
         ]);
 
         return redirect()->back();

@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'HealthWorkerList',
+        'passwords' => 'users',
     ],
 
     /*
@@ -66,7 +66,7 @@ return [
     */
 
     'providers' => [
-        'HealthWorkerList' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\HealthWorkerList::class,
         ],

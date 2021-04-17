@@ -2,6 +2,19 @@
 
 @section('content')
 
+@if (session()->has ('success'))
+    <div class="alart alart-success">
+    {{session()->get ('success') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    @foreach ($errors->all() as $error )
+    <div class="alart alart-danger">{{$error}}</div>
+    @endforeach
+@endif
+
+
 
 <div >
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

@@ -19,6 +19,8 @@
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
+
+    
     <div class="col-md-5 m-1 bg-success">
         <h1>As Patient</h1>
 

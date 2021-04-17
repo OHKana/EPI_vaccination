@@ -25,7 +25,14 @@
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link" href="#">Log Out</a>
+
+            @auth
+                <span class="nav-link">{{auth()->user()->HealthAssistant_Name}}</span>
+                <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+                @else
+                <a class="nav-link" href="{{route('healthWorkerSignInUp')}}">Log In</a>
+
+            @endauth
             </li>
         </ul>
         </nav>

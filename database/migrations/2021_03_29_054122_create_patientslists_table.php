@@ -15,7 +15,7 @@ class CreatePatientslistsTable extends Migration
     {
         Schema::create('patientslists', function (Blueprint $table) {
             $table->id();
-            $table->integer('Registration_No');
+            $table->string('Registration_No');
             $table->string('patients_Name');
             $table->string('fathers_Name');
             $table->string('mothers_Namme');
@@ -26,7 +26,7 @@ class CreatePatientslistsTable extends Migration
             $table->string('vaccination_Area');
             $table->date('regDate');
             $table->string('category');
-            $table->string('password')->default('epi2021');
+            $table->string('password');
             $table->timestamps();
         });
     }

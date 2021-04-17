@@ -21,7 +21,7 @@
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link" href="{{route('SignIn')}}">Sing In</a>
+            <a class="nav-link" href="{{route('healthWorkerSignInUp')}}">Sing In</a>
             </li>
         </ul>
         </nav>
