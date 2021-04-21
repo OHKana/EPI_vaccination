@@ -9,7 +9,7 @@
 
     <div>
         <h2>Teenage Vaccine Schedule</h2>
-        <h3>Patient Name: {{$patients->patients_Name}}</h3>
+        <h3>Patient Name: {{$patients->name}}</h3>
         <h4>Registration No:{{$patients->Registration_No}}</h4>
         <br>
         <table class="table table-light">

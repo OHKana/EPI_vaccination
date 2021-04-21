@@ -5,7 +5,7 @@
         <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav">
             <li class="nav item nav-style">
-            <a class="nav-link active" aria-current="page" href="#">Profile</a>
+            <a class="nav-link active" aria-current="page" href="{{route('patientsProfile')}}">Profile</a>
             </li>
 
             <li class="nav item nav-style">
@@ -21,8 +21,15 @@
             </li>
 
             <li class="nav item nav-style">
-            <a class="nav-link" href="#">Log Out</a>
-            </li>
+
+                @auth
+                    <span class="nav-link">{{auth()->user()->name}}</span>
+                    <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+                    @else
+                    <a class="nav-link" href="{{route('SignInUp')}}">Log In</a>
+
+                @endauth
+                </li>
         </ul>
         </nav>
         </div>

@@ -2,6 +2,7 @@
 
     padding: 5px;
     transition: .25s all ease-in-out;
+    background-color: aliceblue;
 }
 
 .nav-style:hover{

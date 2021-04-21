@@ -15,10 +15,10 @@ class CreatePatientslistsTable extends Migration
     {
         Schema::create('patientslists', function (Blueprint $table) {
             $table->id();
-            $table->string('Registration_No');
-            $table->string('patients_Name');
+            $table->string('user_id');
+
             $table->string('fathers_Name');
-            $table->string('mothers_Namme');
+            $table->string('mothers_Name');
             $table->date('dob');
             $table->string('gender');
             $table->string('contact_Nbr');
@@ -26,7 +26,8 @@ class CreatePatientslistsTable extends Migration
             $table->string('vaccination_Area');
             $table->date('regDate');
             $table->string('category');
-            $table->string('password');
+            
+
             $table->timestamps();
         });
     }

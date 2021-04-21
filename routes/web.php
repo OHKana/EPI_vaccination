@@ -12,6 +12,11 @@ use App\Http\Controllers\PatientsListController;
 use App\Http\Controllers\HealthWorkerListController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SignInUpController;
+use App\Http\Controllers\HealthWorkerSignInUpController;
+use App\Http\Controllers\PatientsSignInUpController;
+use App\Http\Controllers\PatientsProfileController;
+use App\Http\Controllers\HealthworkerProfileController;
+
 
 use App\Http\Controllers\Registrationcontroller;
 use App\Http\Controllers\TeenageVaccineScheduleController;
@@ -44,18 +49,33 @@ Route::get('/services',[Servicescontroller::class,'list'])->name('services');
 Route::get('/helpline',[Helplinecontroller::class,'list'])->name('helpline');
 
 
-// healt worker sign in sign up
-Route::get('/healthWorkerSignInSignUp',[SignInUpController::class,'show'])->name('healthWorkerSignInUp');
-Route::post('/login',[SignInUpController::class,'login'])->name('login');
-Route::get('/logout',[SignInUpController::class,'logout'])->name('logout');
+Route::get('/SignInUp',[SignInUpController::class,'list'])->name('SignInUp');
 
+Route::get('/patientsprofile',[PatientsProfileController::class,'list'])->name('patientsProfile');
+
+
+
+
+// healt worker sign in sign up
+Route::get('/healthWorkerSignInSignUp',[HealthWorkerSignInUpController::class,'show'])->name('healthWorkerSignInUp');
+Route::post('/HWlogin',[HealthWorkerSignInUpController::class,'login'])->name('HWlogin');
+Route::get('/HWlogout',[HealthWorkerSignInUpController::class,'logout'])->name('HWlogout');
+
+// //patients log In
+Route::get('/patientsSignInSignUp',[PatientsSignInUpController::class,'show'])->name('patientsSignInUp');
+Route::post('/plogin',[PatientsSignInUpController::class,'login'])->name('login');
+Route::get('/plogout',[PatientsSignInUpController::class,'logout'])->name('logout');
+
+
+
+Route::group(['middleware'=>'admin-auth'], function(){
+
+Route::get('/healthWorkerprofile',[HealthWorkerProfileController::class,'list'])->name('healthWorkerProfile');
 
 // patients list
 Route::get('/patientsList',[PatientsListController::class,'list'])->name('patientsList');
 Route::get('/patientsList/checkChild/{id}',[PatientsListController::class,'checkChild'])->name('patientsList.checkChild');
 Route::get('/patientsList/checkTeenage/{id}',[PatientsListController::class,'checkTeenage'])->name('patientsList.checkTeenge');
-
-
 
 
 // health worker list
@@ -69,23 +89,20 @@ Route::get('/childvaccineschedule',[ChildVaccineScheduleController::class,'list'
 Route::post('/childvaccineschedule/c',[ChildVaccineScheduleController::class,'create'])->name('childvaccineschedule.create');
 
 
-
 // teenage Vaccine
 Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])->name('TeenageVaccineChart');
 Route::post('/teenageVaccineChart/t',[TeenageVaccineChartController::class,'create'])->name('TeenageVaccineChart.create');
 Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
 Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
 
-
 // Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');
-
 
 // registration
 Route::get('/registration',[Registrationcontroller::class,'list'])->name('registration');
-
 Route::post('/registration/patient',[HealthWorkerListController::class,'create'])->name('registration.assistant');
 Route::post('/registration/assistant',[PatientsListController::class,'create'])->name('registration.patient');
 
+});
 
 
 
@@ -93,12 +110,16 @@ Route::post('/registration/assistant',[PatientsListController::class,'create'])-
 
 
 
-Route::get('/patientLogedIn', function () {
-    return view('patientLogedIn');
-});;
-Route::get('/healthWorkerLogedIn', function () {
-    return view('healthWorkerLogedIn');
-});;
+
+
+
+// Route::get('/patientLogedIn', function () {
+//     return view('patientLogedIn');
+// });;
+
+// Route::get('/healthWorkerLogedIn', function () {
+//     return view('healthWorkerLogedIn');
+// });;
 
 
 

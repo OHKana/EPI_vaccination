@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ChildVaccineSchedule;
 use App\Models\PatientsList;
 use App\Models\TeenageVaccineSchedule;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PatientsListController extends Controller
@@ -33,12 +34,26 @@ class PatientsListController extends Controller
 
     public function create(Request $request)
     {
+
+        // $request->validate([
+        //     'email'=>'required|email',
+        //     'password'=>'required|min:6',
+        // ]);
+        $password="epi2021";
+$users=User::create([
+
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'password'=>bcrypt ($password)
+            ]);
+
+
         // dd($request-> all());
         Patientslist::create([
-            'Registration_No' => $request->Registration_No,
-            'patients_Name' => $request->patients_Name,
+            'user_id' => $users->id,
+
             'fathers_Name' => $request->fathers_Name,
-            'mothers_Namme' => $request->mothers_Namme,
+            'mothers_Name' => $request->mothers_Name,
             'dob' => $request->dob,
             'gender' => $request->gender,
             'Contact_nbr' => $request->contact_Nbr,
@@ -46,6 +61,8 @@ class PatientsListController extends Controller
             'Vaccination_Area' => $request->vaccinationArea,
             'regDate' => $request->regDate,
             'category' => $request->category,
+
+
         ]);
 
         return redirect()->back();

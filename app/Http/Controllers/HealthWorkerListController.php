@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\HealthWorkerLIst;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HealthWorkerListController extends Controller
@@ -14,7 +15,6 @@ class HealthWorkerListController extends Controller
 
 
     public function create(Request $request){
-
 $file_name='';
 // step:1 check req has file
 
@@ -34,12 +34,21 @@ if($request->hasFile('Image'))
         $file->storeAs('photo',$file_name);
     }
 }
-        $password="epi2021";
 
-        // dd($request-> all());
+
+$password="123456";
+
+$users=User::create([
+'role'=>'worker',
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'password'=>bcrypt ($password)
+            ]);
+
+        // dd($users);
         HealthWorkerList::create([
-            'User_Id' => $request -> userId,
-            'HealthAssistant_Name' => $request -> HealthAssistant_Name,
+            'User_Id' => $users->id,
+
             'dob' => $request -> dob,
             'Gender' => $request -> gender,
             'Contact_nbr' => $request -> contactnbr,
@@ -47,7 +56,7 @@ if($request->hasFile('Image'))
             'address' => $request -> address,
             'Vaccination_Area' => $request -> vaccinationArea,
             'file' => $file_name,
-            'password'=>bcrypt($password),
+
         ]);
 
         return redirect()->back();

@@ -3,7 +3,8 @@
 
 @section('content')
 
-
+<H1> Health Worker List</H1>
+<br>
 
 
 <table class="table table-light">
@@ -11,10 +12,10 @@
       <tr>
         <th scope="col">User ID</th>
         <th scope="col">Health Assistant Name</th>
+        <th scope="col">Email Address</th>
         <th scope="col">Date of Birth</th>
         <th scope="col">Gender</th>
         <th scope="col">Contact Number</th>
-        <th scope="col">Email Address</th>
         <th scope="col">Address</th>
         <th scope="col">Vaccination Area</th>
         <th scope="col">Image</th>
@@ -25,12 +26,13 @@
 
 
       <tr>
-        <th scope="row">{{ $data->User_Id}}</th>
-        <td>{{ $data->HealthAssistant_Name}}</td>
+        <th scope="row">{{ $data->id}}</th>
+        <th>{{ $data->workerUser->name}}</th>
+        <td>{{ $data->workerUser->email}}</td>
+
         <td>{{ $data->dob}}</td>
         <td>{{ $data->Gender}}</td>
         <td>{{ $data->Contact_nbr}}</td>
-        <td>{{ $data->Email_Address}}</td>
         <td>{{ $data->address}}</td>
         <td>{{ $data->Vaccination_Area}}</td>
         <td>

@@ -45,13 +45,13 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex text-center text-white bg-dark">
+  <body class="d-flex text-center text-white bg-secondary">
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 
     @include('partials.header')
-    @include('partials.sidebar')
+
 
 
 

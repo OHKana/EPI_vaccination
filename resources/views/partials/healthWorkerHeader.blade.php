@@ -5,7 +5,7 @@
         <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav">
             <li class="nav item nav-style">
-            <a class="nav-link active" aria-current="page" href="#">Profile</a>
+            <a class="nav-link active" aria-current="page" href="{{route('healthWorkerProfile')}}">Profile</a>
             </li>
 
             <li class="nav item nav-style">
@@ -27,8 +27,8 @@
             <li class="nav item nav-style">
 
             @auth
-                <span class="nav-link">{{auth()->user()->HealthAssistant_Name}}</span>
-                <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+                <span class="nav-link">{{auth()->user()->name}}</span>
+                <a class="nav-link" href="{{route('HWlogout')}}">Log Out</a>
                 @else
                 <a class="nav-link" href="{{route('healthWorkerSignInUp')}}">Log In</a>
 

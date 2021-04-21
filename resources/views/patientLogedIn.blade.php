@@ -24,6 +24,12 @@
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
 
+<style>
+    body {
+      background-image: url('https://cdn.sanity.io/images/0vv8moc6/drugtopics/af74d7a244f6fa90475915cc2c4165aae65303db-1000x667.png?auto=format');
+    }
+    </style>
+
 
     <style>
       .bd-placeholder-img {
@@ -51,7 +57,7 @@
 
 
     @include('partials.patientHeader')
-    @include('partials.sidebar')
+    {{-- @include('partials.sidebar') --}}
 
 
 

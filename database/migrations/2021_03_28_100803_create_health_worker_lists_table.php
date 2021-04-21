@@ -16,7 +16,6 @@ class CreateHealthWorkerListsTable extends Migration
         Schema::create('health_worker_lists', function (Blueprint $table) {
             $table->id();
             $table->string('User_Id');
-            $table->string('HealthAssistant_Name');
             $table->date('dob');
             $table->string('Gender');
             $table->string('Contact_nbr');
@@ -24,7 +23,7 @@ class CreateHealthWorkerListsTable extends Migration
             $table->string('address');
             $table->string('Vaccination_Area');
             $table->text('file')->nullable();
-            $table->string('password');
+
             $table->timestamps();
         });
     }
