@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- button --}}
-<div>
+<div class= "text-start">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
       Add New Vaccine(child)
      </button>
@@ -45,11 +45,17 @@
         <input type="text" class="form-control"name="Time_difference" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter time difference">
 
       </div>
-      <div class="form-group text-dark">
-        <label for="exampleInputEmail3">Category</label>
-        <input type="text" class="form-control" name="category" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category">
 
+
+      <div class="form-group text-dark">
+        <label for="exampleInputEmail3" class="form-label">Category:</label>
+        <select class="form-control" name="category" id="">
+            <option value="null">Select Category</option>
+            <option value="Child">Child</option>
+            <option value="Teenage">Teenage</option>
+        </select>
       </div>
+
       <div class="form-group text-dark">
         <label for="exampleInputEmail3">Starting Time</label>
         <input type="text" class="form-control" name="starting_time" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Starting time">

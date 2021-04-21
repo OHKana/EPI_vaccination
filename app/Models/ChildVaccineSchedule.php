@@ -9,4 +9,5 @@ class ChildVaccineSchedule extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    
 }

@@ -4,6 +4,9 @@
 <style>
     body {
       background-image: url('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/vaccine_needle-732x549-thumbnail-732x549.jpg?w=756&h=567');
+      background-repeat: no-repeat;
+      background-size: cover;
+            position: relative;
     }
     </style>
 

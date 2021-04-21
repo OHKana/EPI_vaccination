@@ -42,16 +42,15 @@ Route::get('/',[Homecontroller::class,'list'])->name('home');
 
 Route::get('/notices',[Noticescontroller::class,'list'])->name('notices');
 
-Route::get('/schedule',[ScheduleController::class,'list'])->name('schedule');
-
 Route::get('/services',[Servicescontroller::class,'list'])->name('services');
+
+
 
 Route::get('/helpline',[Helplinecontroller::class,'list'])->name('helpline');
 
 
 Route::get('/SignInUp',[SignInUpController::class,'list'])->name('SignInUp');
 
-Route::get('/patientsprofile',[PatientsProfileController::class,'list'])->name('patientsProfile');
 
 
 
@@ -80,7 +79,7 @@ Route::get('/patientsList/checkTeenage/{id}',[PatientsListController::class,'che
 
 // health worker list
 Route::get('/healthworkerList',[HealthWorkerListController::class,'list'])->name('healthWorkerList');
-
+Route::get('/healthworker/delete/{id}', [HealthWorkerListController::class, 'delete'])->name('healthWorkerList.delete');
 
 // child Vaccine
 Route::get('/ChildVaccineChart',[ChildVaccineChartController::class,'list'])->name('ChildVaccineChart');
@@ -104,8 +103,15 @@ Route::post('/registration/assistant',[PatientsListController::class,'create'])-
 
 });
 
+Route::group(['middleware'=>'user-auth'], function(){
+
+    Route::get('/patientsprofile',[PatientsProfileController::class,'list'])->name('patientsProfile');
+
+    Route::get('/schedule',[ScheduleController::class,'list'])->name('schedule');
 
 
+
+});
 
 
 

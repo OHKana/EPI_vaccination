@@ -12,13 +12,13 @@
             <a class="nav-link" href="{{route('schedule')}}">Schedule</a>
             </li>
 
-            <li class="nav item nav-style">
+            {{-- <li class="nav item nav-style">
             <a class="nav-link" href="{{route('notices')}}">Notices</a>
             </li>
 
             <li class="nav item nav-style">
             <a class="nav-link" href="{{route('helpline')}}">Helpline</a>
-            </li>
+            </li> --}}
 
             <li class="nav item nav-style">
 

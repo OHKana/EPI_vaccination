@@ -19,6 +19,7 @@
         <th scope="col">Address</th>
         <th scope="col">Vaccination Area</th>
         <th scope="col">Image</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -26,7 +27,8 @@
 
 
       <tr>
-        <th scope="row">{{ $data->id}}</th>
+
+        <th scope="row">{{ $data->reg_no}}</th>
         <th>{{ $data->workerUser->name}}</th>
         <td>{{ $data->workerUser->email}}</td>
 
@@ -37,6 +39,9 @@
         <td>{{ $data->Vaccination_Area}}</td>
         <td>
             <img style="width: 100px;" src="{{url('/files/photo/'.$data->file)}}" alt="">
+        </td>
+        <td>
+            <a class="btn btn-danger" href={{route('healthWorkerList.delete',$data['id'])}}>Delete</a>
         </td>
 
       </tr>

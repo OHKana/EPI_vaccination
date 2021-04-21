@@ -16,6 +16,7 @@ class CreateHealthWorkerListsTable extends Migration
         Schema::create('health_worker_lists', function (Blueprint $table) {
             $table->id();
             $table->string('User_Id');
+            $table->string('reg_no');
             $table->date('dob');
             $table->string('Gender');
             $table->string('Contact_nbr');

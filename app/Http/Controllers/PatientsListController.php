@@ -51,7 +51,7 @@ $users=User::create([
         // dd($request-> all());
         Patientslist::create([
             'user_id' => $users->id,
-
+            'reg_no'=>$request->reg_no,
             'fathers_Name' => $request->fathers_Name,
             'mothers_Name' => $request->mothers_Name,
             'dob' => $request->dob,

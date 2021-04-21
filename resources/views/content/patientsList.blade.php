@@ -36,7 +36,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Registration No:</label>
-                    <input type="number" class="form-control" name="Registration_No" placeholder="Enter User Id" >
+                    <input type="number" class="form-control" name="reg_no" placeholder="Enter User Id" >
                 </div>
 
 
@@ -96,9 +96,15 @@
                     <input type="date" class="form-control" name="regDate" placeholder="Enter Todays date ">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Category</label>
-                    <input type="text" class="form-control" name="category" placeholder="Select Category">
+                    <label for="exampleInputEmail1" class="form-label">Category:</label>
+                    <select class="form-control" name="category" id="">
+                        <option value="null">Select Category</option>
+                        <option value="Child">Child</option>
+                        <option value="Teenage">Teenage</option>
+
+                    </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="Enter email address">
@@ -146,7 +152,7 @@
 
 
       <tr>
-        <th scope="row">{{ $data->id}}</th>
+        <th scope="row">{{ $data->reg_no}}</th>
         <th>{{ $data->patientsUser->name}}</th>
         <th>{{ $data->patientsUser->email}}</th>
         <td>{{ $data->fathers_Name}}</td>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\HealthWorkerLIst;
+use App\Models\HealthWorkerList;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -48,7 +48,7 @@ $users=User::create([
         // dd($users);
         HealthWorkerList::create([
             'User_Id' => $users->id,
-
+            'reg_no'=>$request->reg_no,
             'dob' => $request -> dob,
             'Gender' => $request -> gender,
             'Contact_nbr' => $request -> contactnbr,
@@ -60,8 +60,19 @@ $users=User::create([
         ]);
 
         return redirect()->back();
+    }
 
+    public function delete($id)
+    {
 
+        $workers = HealthWorkerList::find($id);
+        $user = User::find($workers->User_Id);
+        
+        $workers->delete();
+
+        $user->delete();
+
+        return redirect()->back();
     }
 
 }

@@ -10,4 +10,8 @@ class Helplinecontroller extends Controller
     {
         return view('content.helpline');
      }
+    //  public function      patients()
+    // {
+    //     return view('content.helpline');
+    //  }
 }

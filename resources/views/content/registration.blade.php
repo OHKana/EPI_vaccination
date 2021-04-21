@@ -31,7 +31,7 @@
         <div class="modal-body bg-dark">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">User ID:</label>
-                    <input type="text" class="form-control" name="id" placeholder="Enter User Id" >
+                    <input type="text" class="form-control" name="reg_no" placeholder="Enter User Id" >
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Health Assistant Name:</label>

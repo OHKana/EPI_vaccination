@@ -4,6 +4,7 @@
         <div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav">
+            @if(auth()->user()->role=='admin')
             <li class="nav item nav-style">
             <a class="nav-link active" aria-current="page" href="{{route('healthWorkerProfile')}}">Profile</a>
             </li>
@@ -23,6 +24,22 @@
             <li class="nav item nav-style">
             <a class="nav-link " href="{{route('registration')}}">Registration</a>
             </li>
+            @endif
+
+            @if(auth()->user()->role=='worker')
+
+            <li class="nav item nav-style">
+                <a class="nav-link active" aria-current="page" href="{{route('healthWorkerProfile')}}">Profile</a>
+                </li>
+
+                <li class="nav item nav-style">
+                <a class="nav-link" href="{{route('patientsList')}}">Patients List</a>
+                </li>
+
+                <li class="nav item nav-style">
+                <a class="nav-link" href="{{route('healthWorkerList')}}">Health Worker List</a>
+                </li>
+            @endif
 
             <li class="nav item nav-style">
 

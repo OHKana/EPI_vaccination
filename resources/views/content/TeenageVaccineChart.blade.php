@@ -3,7 +3,7 @@
 @section('content')
 
     {{-- button --}}
-    <div>
+    <div class= "text-start">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
             Add New Vaccine (teenage)
         </button>
@@ -74,12 +74,15 @@
                                 <input type="text" class="form-control" name="Schedule" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Enter schedule">
 
-
-                                        <div class="form-group text-dark">
-                                            <label for="exampleInputEmail3 ">Category</label>
-                                            <input type="text" class="form-control" name="category" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" placeholder="Enter Category">
-                                        </div>
+                                    <div class="form-group text-dark">
+                                        <label for="exampleInputEmail3" class="form-label">Category:</label>
+                                        <select class="form-control" name="category" id="">
+                                            <option value="null">Select Category</option>
+                                            <option value="Child">Child</option>
+                                            <option value="Teenage">Teenage</option>
+                                        </select>
+                                      </div>
+                                        
                                         <br>
 
                                         <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
