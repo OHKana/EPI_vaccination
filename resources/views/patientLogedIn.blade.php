@@ -27,6 +27,9 @@
 <style>
     body {
       background-image: url('https://cdn.sanity.io/images/0vv8moc6/drugtopics/af74d7a244f6fa90475915cc2c4165aae65303db-1000x667.png?auto=format');
+      background-repeat: no-repeat;
+      background-size: cover;
+            position: relative;
     }
     </style>
 
@@ -53,7 +56,7 @@
   </head>
   <body class="d-flex text-center text-white bg-dark">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
 
     @include('partials.patientHeader')

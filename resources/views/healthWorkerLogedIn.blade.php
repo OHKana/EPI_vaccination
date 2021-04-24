@@ -49,7 +49,7 @@
   </head>
   <body class="d-flex text-center text-white bg-success">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
 
     @include('partials.healthWorkerHeader')

@@ -24,11 +24,14 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($doses as $data)
 
+
+            @foreach ($doses as $data)
+            {{-- @dd($data), --}}
             <tr>
+
                 <th scope="row">{{ $data->id }}</th>
-                <td>{{ $data->V_Name }}</td>
+                <td>{{ $data->vaccineName->V_Name }}</td>
                 <td>{{ $data->Eligible_date }}</td>
                 <td>{{ $data->fst_d }}</td>
                 <td>{{ $data->snd_d }}</td>

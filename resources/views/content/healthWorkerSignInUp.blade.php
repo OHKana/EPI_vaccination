@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2> Sign In to Continue......</h2>
+<h2 class="text-primary"> Sign In to Continue......</h2>
 
 
 
@@ -20,7 +20,14 @@
         @endforeach
     @endif
 
-
+    <style>
+        body {
+          background-image: url('https://www.languagelegos.com/wp-content/uploads/2018/05/doctor-blog-2.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+                position: relative;
+        }
+        </style>
 
 
     <div class="col-md-6 m-1 bg-success">

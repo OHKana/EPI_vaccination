@@ -19,7 +19,7 @@
                 <tr>
                     <th scope="col">Vaccine Dose Name</th>
                     <th scope="col">Schedule</th>
-                    <th scope="col">Category</th>
+                    {{-- <th scope="col">Category</th> --}}
                 </tr>
             </thead>
 
@@ -31,7 +31,7 @@
                         <th scope="row">{{ $data->V_d_Name }}</th>
                         <td>{{ $data->Schedule }}</td>
 
-                        <td>{{ $data->category }}</td>
+                        {{-- <td>{{ $data->category }}</td> --}}
                     </tr>
                 @endforeach
             </tbody>
@@ -74,15 +74,8 @@
                                 <input type="text" class="form-control" name="Schedule" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Enter schedule">
 
-                                    <div class="form-group text-dark">
-                                        <label for="exampleInputEmail3" class="form-label">Category:</label>
-                                        <select class="form-control" name="category" id="">
-                                            <option value="null">Select Category</option>
-                                            <option value="Child">Child</option>
-                                            <option value="Teenage">Teenage</option>
-                                        </select>
-                                      </div>
-                                        
+
+
                                         <br>
 
                                         <button type="submit" class="btn btn-primary" data-bs-toggle="modal"

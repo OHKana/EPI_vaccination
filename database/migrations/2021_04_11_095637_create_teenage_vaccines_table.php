@@ -17,7 +17,7 @@ class CreateTeenageVaccinesTable extends Migration
             $table->id();
             $table->string('V_d_Name');
             $table->string('Schedule');
-            $table->string('category');
+            
             $table->timestamps();
         });
     }

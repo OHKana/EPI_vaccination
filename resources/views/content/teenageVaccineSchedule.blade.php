@@ -9,13 +9,13 @@
 
     <div>
         <h2>Teenage Vaccine Schedule</h2>
-        <h3>Patient Name: {{$patients->name}}</h3>
-        <h4>Registration No:{{$patients->Registration_No}}</h4>
+        <h3>Patient Name: {{$patients->patientsUser->name}}</h3>
+        <h4>Registration No:{{$patients->reg_no}}</h4>
         <br>
         <table class="table table-light">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Serial No</th>
                     <th scope="col">Vaccine Dose Name</th>
                     <th scope="col">Schedule</th>
                     <th scope="col">Eligible Date</th>
@@ -26,12 +26,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($teenage as $data)
+                @foreach ($teenage as $key=> $data)
 
                     <tr>
-                        <th scope="row">{{ $data->id }}</th>
-                        <td>{{ $data->V_d_Name }}</td>
-                        <td>{{ $data->Schedule }}</td>
+                        <th scope="row">{{ $key+1}}</th>
+
+                        <td>{{ $data->vaccineName->V_d_Name }}</td>
+                        <td>{{ $data->vaccineName->Schedule }}</td>
                         <td>{{ $data->eligible_date }}</td>
                         <td>{{ $data->V_rcv_date }}</td>
                         <td>

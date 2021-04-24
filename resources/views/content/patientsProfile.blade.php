@@ -13,10 +13,12 @@
     @endforeach
 @endif
 
+<br>
+
 <body>
 
     <div class="flex-container">
-        <div class="flex-item">
+        <div class="flex-item text-dark text-bold">
             <h1 id="customer">
                 Welcome Back !
               {{-- @if (auth()){

@@ -2,6 +2,9 @@
 
 @section('content')
 
+<h2 class="text-primary"> Sign In to Continue......</h2>
+
+
 
 <div class="row" style="padding: 115px;">
     @if(session()->has('success'))
@@ -15,6 +18,16 @@
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
+
+
+    <style>
+        body {
+          background-image: url('https://static.vecteezy.com/system/resources/previews/001/105/580/non_2x/doctor-with-coronavirus-vaccine-for-patient-vector.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+                position: relative;
+        }
+        </style>
 
 
 
@@ -34,7 +47,9 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
+    <br>
 </div>
 
 

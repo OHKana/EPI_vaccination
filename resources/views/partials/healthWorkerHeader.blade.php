@@ -44,7 +44,7 @@
             <li class="nav item nav-style">
 
             @auth
-                <span class="nav-link">{{auth()->user()->name}}</span>
+                <span class="nav-link text-dark">{{auth()->user()->name}}</span>
                 <a class="nav-link" href="{{route('HWlogout')}}">Log Out</a>
                 @else
                 <a class="nav-link" href="{{route('healthWorkerSignInUp')}}">Log In</a>

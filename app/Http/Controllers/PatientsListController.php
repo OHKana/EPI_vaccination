@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\child_vaccine;
 use App\Models\ChildVaccineSchedule;
 use App\Models\PatientsList;
+use App\Models\teenageVaccine;
 use App\Models\TeenageVaccineSchedule;
 use App\Models\User;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class PatientsListController extends Controller
@@ -19,16 +22,16 @@ class PatientsListController extends Controller
 
     public function      checkChild($id)
     {
-        $doses= ChildVaccineSchedule::all();
         $patients = Patientslist::find($id);
+        $doses= ChildVaccineSchedule::where('patient_id',$id)->get();
         return view('content.childvaccineschedule', compact('patients','doses'));
     }
 
     public function      checkTeenage($id)
     {
-        $teenage= TeenageVaccineSchedule::all();
         $patients = Patientslist::find($id);
-        return view('content.teenageVaccineSchedule', compact('patients','teenage'));
+        $teenage= TeenageVaccineSchedule::where('patient_id',$id)->get();
+         return view('content.teenageVaccineSchedule', compact('patients','teenage'));
     }
 
 
@@ -49,7 +52,7 @@ $users=User::create([
 
 
         // dd($request-> all());
-        Patientslist::create([
+        $p=Patientslist::create([
             'user_id' => $users->id,
             'reg_no'=>$request->reg_no,
             'fathers_Name' => $request->fathers_Name,
@@ -64,6 +67,32 @@ $users=User::create([
 
 
         ]);
+
+        if($request->category=='Child')
+        {
+
+            $cv=child_vaccine::all();
+            foreach($cv as $item)
+            ChildVaccineSchedule::create ([
+                'patient_id'=>$p->id,
+                'cv_id'=>$item->id,
+
+            ]);
+        }
+
+
+else{
+    $tv=teenageVaccine::all();
+    foreach($tv as $item)
+
+    TeenageVaccineSchedule::create ([
+        'patient_id'=>$p->id,
+        'tv_id'=>$item->id,
+
+    ]);
+}
+
+
 
         return redirect()->back();
     }

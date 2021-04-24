@@ -19,7 +19,8 @@ class ChildVaccineScheduleController extends Controller
     {
         // dd($request-> all());
         ChildVaccineSchedule::create([
-            'V_id' => $request->V_id,
+            'cv_id' => $request->cv_id,
+            'patient_id' => $request->patient_id,
             'eligible_d' => $request->Eligible_date,
             'fst_d' => $request->fst_d,
             'snd_d' => $request->snd_d,

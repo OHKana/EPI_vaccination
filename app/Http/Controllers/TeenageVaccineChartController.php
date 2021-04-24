@@ -18,14 +18,9 @@ class TeenageVaccineChartController extends Controller
          teenageVaccine::create([
              'V_d_Name' => $request->V_d_Name,
              'Schedule' => $request->Schedule,
-             'category' => $request->category,
-         ]);
-         TeenageVaccineSchedule::create([
-            'V_d_Name' => $request->V_d_Name,
-            'Schedule' => $request->Schedule
 
          ]);
-
+         
          return redirect()->back();
      }
  }

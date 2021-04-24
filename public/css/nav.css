@@ -5,6 +5,12 @@
     background-color: aliceblue;
 }
 
+header{
+    background-color: aliceblue;
+    color: black;
+
+}
+
 .nav-style:hover{
     padding: 1px;
     background-color: aquamarine;

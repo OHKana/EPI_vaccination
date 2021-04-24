@@ -48,15 +48,6 @@
 
 
       <div class="form-group text-dark">
-        <label for="exampleInputEmail3" class="form-label">Category:</label>
-        <select class="form-control" name="category" id="">
-            <option value="null">Select Category</option>
-            <option value="Child">Child</option>
-            <option value="Teenage">Teenage</option>
-        </select>
-      </div>
-
-      <div class="form-group text-dark">
         <label for="exampleInputEmail3">Starting Time</label>
         <input type="text" class="form-control" name="starting_time" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Starting time">
 
@@ -87,7 +78,7 @@
                 <th scope="col">Disease</th>
                 <th scope="col">Number of Doses</th>
                 <th scope="col">Time difference</th>
-                <th scope="col">Category</th>
+                {{-- <th scope="col">Category</th> --}}
                 <th scope="col">Starting Time</th>
 
               </tr>
@@ -101,7 +92,7 @@
                 <td>{{ $data->disease}}</td>
                 <td>{{ $data->N_of_dose}}</td>
                 <td>{{ $data->Time_difference}}</td>
-                <td>{{ $data->category}}</td>
+                {{-- <td>{{ $data->category}}</td> --}}
                 <td>{{ $data->starting_time}}</td>
 
               </tr>

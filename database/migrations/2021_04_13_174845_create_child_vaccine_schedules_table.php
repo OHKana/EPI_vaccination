@@ -15,7 +15,8 @@ class CreateChildVaccineSchedulesTable extends Migration
     {
         Schema::create('child_vaccine_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('V_Name');
+            $table->integer('cv_id');
+            $table->integer('patient_id');
             $table->string('eligible_d')->nullable();
             $table->string('fst_d')->nullable();
             $table->string('snd_d')->nullable();
@@ -23,7 +24,7 @@ class CreateChildVaccineSchedulesTable extends Migration
             $table->string('fth_d')->nullable();
             $table->string('fifth_d')->nullable();
             $table->timestamps();
-        
+
         });
     }
 
