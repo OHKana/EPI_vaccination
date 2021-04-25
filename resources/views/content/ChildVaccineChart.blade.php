@@ -3,11 +3,14 @@
 @section('content')
 
 {{-- button --}}
+<br>
 <div class= "text-start">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
       Add New Vaccine(child)
      </button>
     </div>
+
+    <h2>Child Vaccine Chart</h2>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -75,7 +78,7 @@
             <thead>
               <tr>
                 <th scope="col">Vaccine Name</th>
-                <th scope="col">Disease</th>
+                <th scope="col">Disease Name</th>
                 <th scope="col">Number of Doses</th>
                 <th scope="col">Time difference</th>
                 {{-- <th scope="col">Category</th> --}}

@@ -1,6 +1,21 @@
 @extends('master')
 
 @section('content')
+
+<div class="row" style="padding: 115px;">
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
+    @endif
+
+    
 <style>
     body {
       background-image: url('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/vaccine_needle-732x549-thumbnail-732x549.jpg?w=756&h=567');

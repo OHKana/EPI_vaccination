@@ -21,7 +21,7 @@
         <div class="flex-item text-dark text-bold">
             <h1 id="customer">
                 Welcome Back !
-              {{-- @if (auth()){
+               @if (auth()){
                {{auth()->user()->name}}
                }
 
@@ -29,7 +29,7 @@
                {
                     00
                }
-               @endif --}}
+               @endif
             </h1>
             {{-- @dd() --}}
             <p id="customer" style="max-width:800px text-centered">

@@ -17,10 +17,11 @@ class TeenageVaccineChartController extends Controller
          // dd($request-> all());
          teenageVaccine::create([
              'V_d_Name' => $request->V_d_Name,
+             'disease' => $request->disease,
              'Schedule' => $request->Schedule,
 
          ]);
-         
+
          return redirect()->back();
      }
  }

@@ -16,8 +16,9 @@ class CreateTeenageVaccinesTable extends Migration
         Schema::create('teenage_vaccines', function (Blueprint $table) {
             $table->id();
             $table->string('V_d_Name');
+            $table->string('disease');
             $table->string('Schedule');
-            
+
             $table->timestamps();
         });
     }

@@ -6,18 +6,7 @@
 
 
 
-<div class="row" style="padding: 115px;">
-    @if(session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-    @endif
 
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            <div class="alert alert-danger">{{$error}}</div>
-        @endforeach
-    @endif
 
 
     <style>
@@ -31,7 +20,10 @@
 
 
 
-<div class="col-md-6 m-1 bg-success">
+<div class="col-md-5 m-5 p-2"
+style="background-color: rgba(71, 204, 71, 0.877)"
+>
+
     <h1>As Patient</h1>
 
     <form action="{{route('login')}}" method="post">

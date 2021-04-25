@@ -19,15 +19,16 @@
         <div class="flex-item">
             <h1 id="customer">
                 Welcome Back !
-              {{-- @if (auth()){
+              @if (auth()){
                {{auth()->user()->name}}
                }
 
                @else
-               {
+               {{-- {
                     00
-               }
-               @endif --}}
+               } --}}
+               <h1> sorry <h1>
+               @endif
             </h1>
             {{-- @dd() --}}
             <p id="customer" style="max-width:800px text-centered">
@@ -38,5 +39,4 @@
     </div>
 
 </body>
-</html>
 @endsection

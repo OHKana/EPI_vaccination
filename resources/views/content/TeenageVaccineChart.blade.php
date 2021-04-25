@@ -2,6 +2,7 @@
 
 @section('content')
 
+<br>
     {{-- button --}}
     <div class= "text-start">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
@@ -11,14 +12,15 @@
 <br>
 
 
-<h2>Teenage Vaccine Name: TT</h2>
+<h2>Teenage Vaccine Chart</h2>
 
     <div>
         <table class="table table-light">
             <thead>
                 <tr>
-                    <th scope="col">Vaccine Dose Name</th>
-                    <th scope="col">Schedule</th>
+                    <th scope="col">Vaccine Name</th>
+                    <th scope="col">Disease Name</th>
+                    <th scope="col">Starting Time</th>
                     {{-- <th scope="col">Category</th> --}}
                 </tr>
             </thead>
@@ -29,6 +31,7 @@
 
                     <tr>
                         <th scope="row">{{ $data->V_d_Name }}</th>
+                        <td>{{ $data->disease}}</td>
                         <td>{{ $data->Schedule }}</td>
 
                         {{-- <td>{{ $data->category }}</td> --}}
@@ -68,22 +71,27 @@
                             <label for="exampleInputEmail3 ">Vaccine Dose Name</label>
                             <input type="text" class="form-control" name="V_d_Name" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Enter Dose Name">
+                        </div>
 
-                            <div class="form-group text-dark">
-                                <label for="exampleInputEmail3 ">Schedule</label>
-                                <input type="text" class="form-control" name="Schedule" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Enter schedule">
+                        <div class="form-group text-dark">
+                            <label for="exampleInputEmail3 ">Disease Name</label>
+                            <input type="text" class="form-control" name="disease" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter schedule">
+                        </div>
+                        <div class="form-group text-dark">
+                            <label for="exampleInputEmail3 ">Schedule</label>
+                            <input type="text" class="form-control" name="Schedule" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter schedule">
+                        </div>
 
 
+                         <br>
 
-                                        <br>
-
-                                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal3">
-                                            Submit
-                                        </button>
-                                        <br>
-                                        <br>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal3">
+                                    Submit
+                            </button>
+                         <br>
                 </form>
                 {{-- from end --}}
 

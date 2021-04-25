@@ -1,4 +1,4 @@
-{{-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
     <div class="position-sticky pt-4">
       <ul class="nav flex-column">
         <li class="nav-item p-3">
@@ -27,28 +27,25 @@
               Vacciness
             </a>
           </li>
+
         <li class="nav-item p-2">
-         <a class="nav-link text-white" href={{route('registration')}}>
-            <span data-feather="truck"></span>
-            Registration
-          </a>
-        </li>
-        <li class="nav-item p-2">
-            {{-- <a class="nav-link text-white" href={{route('registration')}}>
+            <a class="nav-link text-white" href={{route('registration')}}>
                <span data-feather="truck"></span>
                Registration
-             </a> --}}
-              {{-- @auth
+             </a>
+        </li>
+        <li>
+            @auth
                 <span class="nav-link text-white">{{auth()->user()->name}}</span>
                 <a class="nav-link text-white" href="{{route('logout')}}">Log Out</a>
                 @else
                 <a class="nav-link text-white" href="{{route('healthWorkerSignInUp')}}">Log In</a>
 
             @endauth
-           </li>
+        </li>
 
       </ul>
 
 
     </div>
-  </nav> --}}
+  </nav>
