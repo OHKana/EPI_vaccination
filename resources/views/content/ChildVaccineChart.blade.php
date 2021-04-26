@@ -4,11 +4,13 @@
 
 {{-- button --}}
 <br>
+@if(auth()->user()->role=='admin')
 <div class= "text-start">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
       Add New Vaccine(child)
      </button>
     </div>
+    @endif
 
     <h2>Child Vaccine Chart</h2>
 

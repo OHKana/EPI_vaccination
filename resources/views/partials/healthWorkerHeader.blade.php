@@ -4,7 +4,7 @@
         <div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav">
-            @if(auth()->user()->role=='admin')
+            {{-- @if(auth()->user()->role=='admin')
             <li class="nav item nav-style">
             <a class="nav-link active" aria-current="page" href="{{route('healthWorkerProfile')}}">Profile</a>
             </li>
@@ -39,10 +39,9 @@
                 <li class="nav item nav-style">
                 <a class="nav-link" href="{{route('healthWorkerList')}}">Health Worker List</a>
                 </li>
-            @endif
+            @endif --}}
 
             <li class="nav item nav-style">
-
             @auth
                 <span class="nav-link text-dark">{{auth()->user()->name}}</span>
                 <a class="nav-link" href="{{route('HWlogout')}}">Log Out</a>

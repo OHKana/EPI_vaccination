@@ -21,8 +21,7 @@
 
 
 <div class="col-md-5 m-5 p-2"
-style="background-color: rgba(71, 204, 71, 0.877)"
->
+style="background-color: rgba(50, 245, 50, 0.877)">
 
     <h1>As Patient</h1>
 

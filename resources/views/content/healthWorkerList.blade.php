@@ -19,7 +19,9 @@
         <th scope="col">Address</th>
         <th scope="col">Vaccination Area</th>
         <th scope="col">Image</th>
+        @if(auth()->user()->role=='admin')
         <th scope="col">Action</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -40,10 +42,12 @@
         <td>
             <img style="width: 100px;" src="{{url('/files/photo/'.$data->file)}}" alt="">
         </td>
+
+        @if(auth()->user()->role=='admin')
         <td>
             <a class="btn btn-danger" href={{route('healthWorkerList.delete',$data['id'])}}>Delete</a>
         </td>
-
+        @endif
       </tr>
       @endforeach
     </tbody>

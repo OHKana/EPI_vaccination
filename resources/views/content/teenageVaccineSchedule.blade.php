@@ -67,11 +67,7 @@
                 <form class="container bg-light" method="POST" action="{{ route('teenageVaccineSchedule.create') }}">
                     @csrf
                     <div class="modal-body">
-                                <div class="form-group text-dark">
-                                    <label for="exampleInputEmail3 ">Eligible Date</label>
-                                    <input type="date" class="form-control" name="eligible_date" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter Eligible date">
-                                </div>
+                                
 
                                 <div class="form-group text-dark">
                                         <label for="exampleInputEmail3 ">Vaccine recieve Date</label>

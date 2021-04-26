@@ -14,7 +14,7 @@
     </button>
   </div> --}}
 
-  
+
 
 
 <!-- Button trigger modal -->
@@ -129,9 +129,10 @@
 
 
 
+<div class="form-control container">
 
+<table class="table table-light ">
 
-<table class="table table-light">
     <thead>
       <tr>
         <th scope="col">Registration No</th>
@@ -181,6 +182,6 @@
     </tbody>
   </table>
 
-
+</div>
 
 @endsection
