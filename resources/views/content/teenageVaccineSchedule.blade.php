@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="col">Serial No</th>
                     <th scope="col">Vaccine Dose Name</th>
-                    <th scope="col">Schedule</th>
+                    {{-- <th scope="col">Schedule</th> --}}
                     <th scope="col">Eligible Date</th>
                     <th scope="col">Vaccine recieve Date</th>
                     <th scope="col">Action</th>
@@ -27,20 +27,22 @@
             </thead>
             <tbody>
                 @foreach ($teenage as $key=> $data)
+                {{-- @dd($data), --}}
 
                     <tr>
                         <th scope="row">{{ $key+1}}</th>
 
                         <td>{{ $data->vaccineName->V_d_Name }}</td>
                         <td>{{ $data->vaccineName->Schedule }}</td>
-                        <td>{{ $data->eligible_date }}</td>
+                        {{-- <td>{{ $data->eligible_date }}</td> --}}
                         <td>{{ $data->V_rcv_date }}</td>
+
                         <td>
                             <div>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal3">
-                                    Update
-                                </button>
+                            <a type="button" href="{{route('teenageVaccineSchedule.edit',$data['id'])}}" class="btn btn-primary" >
+                                        Get Vaccine
+                            </a>
+
                             </div>
 
                         </td>
@@ -67,7 +69,7 @@
                 <form class="container bg-light" method="POST" action="{{ route('teenageVaccineSchedule.create') }}">
                     @csrf
                     <div class="modal-body">
-                                
+
 
                                 <div class="form-group text-dark">
                                         <label for="exampleInputEmail3 ">Vaccine recieve Date</label>

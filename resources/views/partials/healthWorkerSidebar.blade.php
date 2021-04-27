@@ -26,11 +26,23 @@
           </a>
         </li>
         <li class="nav-item nav-style p-2">
+            <a class="nav-link " href={{route('ChildVaccineChart')}}>
+               <span data-feather="users"></span>
+               Child Vacchine Chart
+             </a>
+           </li>
+           <li class="nav-item nav-style p-2">
+            <a class="nav-link " href={{route('TeenageVaccineChart')}}>
+               <span data-feather="users"></span>
+               Teenage Vaccine Chart
+             </a>
+           </li>
+        {{-- <li class="nav-item nav-style p-2">
            <a class="nav-link " href={{route('services')}}>
               <span data-feather="meh"></span>
               Vacciness
             </a>
-          </li>
+          </li> --}}
 
         <li class="nav-item nav-style p-2">
             <a class="nav-link " href={{route('registration')}}>
@@ -55,11 +67,23 @@
              </a>
         </li>
         <li class="nav-item nav-style p-2">
+            <a class="nav-link " href={{route('ChildVaccineChart')}}>
+               <span data-feather="users"></span>
+               Child Vacchine Chart
+             </a>
+           </li>
+           <li class="nav-item nav-style p-2">
+            <a class="nav-link " href={{route('TeenageVaccineChart')}}>
+               <span data-feather="users"></span>
+               Teenage Vaccine Chart
+             </a>
+           </li>
+        {{-- <li class="nav-item nav-style p-2">
             <a class="nav-link " href={{route('services')}}>
                <span data-feather="meh"></span>
                Vacciness
              </a>
-        </li>
+        </li> --}}
         <li class="nav-item nav-style p-2">
             <a class="nav-link " href={{route('healthWorkerList')}}>
                <span data-feather="users"></span>

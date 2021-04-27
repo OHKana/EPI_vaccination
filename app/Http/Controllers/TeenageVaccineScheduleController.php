@@ -30,4 +30,10 @@ class TeenageVaccineScheduleController extends Controller
 
          return redirect()->back();
      }
+     public function edit($id)
+    {
+
+        $teenage=TeenageVaccineSchedule::find($id);
+        $vaccine=teenageVaccine::find($teenage->cv_id);
+    }
 }

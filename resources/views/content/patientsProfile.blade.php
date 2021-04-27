@@ -21,9 +21,9 @@
         <div class="flex-item text-dark text-bold">
             <h1 id="customer">
                 Welcome Back !
-               @if (auth()){
+               @if (auth())
                {{auth()->user()->name}}
-               }
+               
 
                @else
                {

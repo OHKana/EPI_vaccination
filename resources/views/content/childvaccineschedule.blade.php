@@ -44,7 +44,7 @@ use Carbon\carbon;
                 <td>
                     <div>
                         @if($data->vaccineName->N_of_dose!=$data->dose_count)
-                     
+
                         <a type="button"  href="{{route('childvaccineschedule.edit',$data['id'])}}" class="btn btn-primary" >
                             Get Vaccine
                     </a>
@@ -60,17 +60,17 @@ use Carbon\carbon;
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-dark" id="exampleModalLabel">Update Vaccine recived date</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        </div> --}}
 
 
 {{-- form --}}
-<form method="POST" action="{{route('childvaccineschedule.create')}}">
+{{-- <form method="POST" action="{{route('childvaccineschedule.create')}}">
     @csrf
 
     <div class="form-group ">
@@ -97,9 +97,9 @@ use Carbon\carbon;
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 {{-- from end --}}
+{{-- </div>
 </div>
-</div>
-</div>
+</div>  --}}
 
 
 

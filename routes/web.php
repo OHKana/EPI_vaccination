@@ -93,6 +93,7 @@ Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])
 Route::post('/teenageVaccineChart/t',[TeenageVaccineChartController::class,'create'])->name('TeenageVaccineChart.create');
 Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
 Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
+Route::post('/teenagevaccineschedule/edit/{id}',[TeenageVaccineScheduleController::class,'edit'])->name('teenageVaccineSchedule.edit');
 
 // Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');
 
