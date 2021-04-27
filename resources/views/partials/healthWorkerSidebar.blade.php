@@ -65,8 +65,9 @@
                <span data-feather="users"></span>
                Health Worker List
              </a>
+             <br>
         </li>
-        <br>
+
 
         @endif
 

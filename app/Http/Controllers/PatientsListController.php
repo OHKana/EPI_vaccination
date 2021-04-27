@@ -8,6 +8,7 @@ use App\Models\PatientsList;
 use App\Models\teenageVaccine;
 use App\Models\TeenageVaccineSchedule;
 use App\Models\User;
+use Carbon\Carbon;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
@@ -76,6 +77,8 @@ $users=User::create([
             ChildVaccineSchedule::create ([
                 'patient_id'=>$p->id,
                 'cv_id'=>$item->id,
+                // 'eligible_d'=>$p->dob,
+                // 'fst_d'=>$p->regDate,
 
             ]);
         }
@@ -83,11 +86,13 @@ $users=User::create([
 
 else{
     $tv=teenageVaccine::all();
+    $o_date=Carbon::create($p->dob)->addYears(15)->isoFormat('Y-M-D');
     foreach($tv as $item)
 
     TeenageVaccineSchedule::create ([
         'patient_id'=>$p->id,
         'tv_id'=>$item->id,
+        // 'eligible_date'=>$o_date,
 
     ]);
 }

@@ -17,6 +17,7 @@ class CreateChildVaccineSchedulesTable extends Migration
             $table->id();
             $table->integer('cv_id');
             $table->integer('patient_id');
+            $table->integer('dose_count')->default(0);
             $table->string('eligible_d')->nullable();
             $table->string('fst_d')->nullable();
             $table->string('snd_d')->nullable();
@@ -24,7 +25,6 @@ class CreateChildVaccineSchedulesTable extends Migration
             $table->string('fth_d')->nullable();
             $table->string('fifth_d')->nullable();
             $table->timestamps();
-
         });
     }
 

@@ -96,9 +96,9 @@
                 <th scope="row">{{ $data->V_Name}}</th>
                 <td>{{ $data->disease}}</td>
                 <td>{{ $data->N_of_dose}}</td>
-                <td>{{ $data->Time_difference}}</td>
+                <td>{{ $data->Time_difference}} weeks</td>
                 {{-- <td>{{ $data->category}}</td> --}}
-                <td>{{ $data->starting_time}}</td>
+                <td>{{ $data->starting_time}} weeks</td>
 
               </tr>
               @endforeach

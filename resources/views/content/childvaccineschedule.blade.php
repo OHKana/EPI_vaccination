@@ -24,7 +24,10 @@
           </tr>
         </thead>
         <tbody>
+@php
+use Carbon\carbon;
 
+@endphp
 
             @foreach ($doses as $data)
             {{-- @dd($data), --}}
@@ -32,7 +35,7 @@
 
                 <th scope="row">{{ $data->id }}</th>
                 <td>{{ $data->vaccineName->V_Name }}</td>
-                <td>{{ $data->Eligible_date }}</td>
+                <td>{{Carbon::create($patients->dob)->addWeeks($data->vaccineName->starting_time)->isoFormat('Y-M-D')}}</td>
                 <td>{{ $data->fst_d }}</td>
                 <td>{{ $data->snd_d }}</td>
                 <td>{{ $data->trd_d }}</td>
@@ -40,10 +43,12 @@
                 <td>{{ $data->fifth_d }}</td>
                 <td>
                     <div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal4">
-                            Update
-                        </button>
+                        @if($data->vaccineName->N_of_dose!=$data->dose_count)
+                     
+                        <a type="button"  href="{{route('childvaccineschedule.edit',$data['id'])}}" class="btn btn-primary" >
+                            Get Vaccine
+                    </a>
+                    @endif
                     </div>
                 </td>
             </tr>
@@ -68,11 +73,7 @@
 <form method="POST" action="{{route('childvaccineschedule.create')}}">
     @csrf
 
-    <div class="form-group">
-      <label for="exampleInputPassword1">Eligible For vaccine Date</label>
-      <input type="text" class="form-control" name="Eligible_date" placeholder="Eligible date">
-    </div>
-    <div class="form-group">
+    <div class="form-group ">
         <label for="exampleInputPassword1">1st dose</label>
         <input type="date" class="form-control" name="fst_d" placeholder="Enter dose Recive Date">
       </div>

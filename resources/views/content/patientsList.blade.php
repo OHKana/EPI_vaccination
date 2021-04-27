@@ -4,15 +4,7 @@
 
 
 {{-- search bar --}}
-{{-- <div class="input-group">
-    <div class="form-outline">
-      <input id="search-input" type="search" id="form1" class="form-control" />
-      <label class="form-label" for="form1">Search</label>
-    </div>
-    <button id="search-button" type="button" class="btn btn-primary">
-      <i class="fas fa-search"></i>
-    </button>
-  </div> --}}
+
 
 
 
@@ -131,6 +123,13 @@
 
 <div class="form-control container">
 
+ <div class="table-responsive">
+
+    <div class="form-group">
+        <input type="text" name="search" placeholder="Enter patient id" class="form-control">
+        <button class="btn btn-success">Search</button>
+    </div>
+
 <table class="table table-light ">
 
     <thead>
@@ -182,6 +181,7 @@
     </tbody>
   </table>
 
+</div>
 </div>
 
 @endsection

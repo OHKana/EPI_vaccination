@@ -86,7 +86,7 @@ Route::get('/ChildVaccineChart',[ChildVaccineChartController::class,'list'])->na
 Route::post('/ChildVaccineChart',[ChildVaccineChartController::class,'create'])->name('ChildVaccineChart.create');
 Route::get('/childvaccineschedule',[ChildVaccineScheduleController::class,'list'])->name('childvaccineschedule');
 Route::post('/childvaccineschedule/c',[ChildVaccineScheduleController::class,'create'])->name('childvaccineschedule.create');
-
+Route::get('/childvaccineschedule/edit/{id}',[ChildVaccineScheduleController::class,'edit'])->name('childvaccineschedule.edit');
 
 // teenage Vaccine
 Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])->name('TeenageVaccineChart');
