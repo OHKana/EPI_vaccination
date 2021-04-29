@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Patientslist::class,'user_id','id');
     }
+    public function WorkerProfile()
+    {
+        return $this->hasOne(HealthWorkerlist::class,'User_Id','id');
+    }
 }

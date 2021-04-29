@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\child_vaccine;
 use App\Models\ChildVaccineSchedule;
+use App\Models\Patientslist;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 class ChildVaccineScheduleController extends Controller
 {
     // dd($request-> all());
@@ -17,12 +18,11 @@ class ChildVaccineScheduleController extends Controller
      }
      public function create(Request $request)
     {
-        // dd($request-> all());
+
         ChildVaccineSchedule::create([
             'cv_id' => $request->cv_id,
             'dose_count' => $request->dose_count,
             'patient_id' => $request->patient_id,
-            'eligible_d' => $request->Eligible_date,
             'fst_d' => $request->fst_d,
             'snd_d' => $request->snd_d,
             'trd_d' => $request->trd_d,

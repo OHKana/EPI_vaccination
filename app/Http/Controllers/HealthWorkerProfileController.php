@@ -8,6 +8,10 @@ class HealthWorkerProfileController extends Controller
 {
     public function      list()
     {
-        return view('content.healthWorkerProfile');
+        $user=auth()->user();
+        $worker=auth()->user()->WorkerProfile;
+        // dd($user->);
+        // dd($worker)
+        return view('content.healthWorkerProfile',compact('user', 'worker'));
      }
 }

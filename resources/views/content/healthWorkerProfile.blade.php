@@ -21,7 +21,7 @@
                 Welcome Back !
               @if (auth())
                {{auth()->user()->name}}
-               
+
 
                @else
                {{-- {
@@ -38,5 +38,37 @@
         </div>
     </div>
 
+
+
+    {{-- health worker profile --}}
+    @if(auth()->user()->role=='worker')
+    <div class="album py-5 ">
+    <div class="container">
+        <h3 class="font-weight-bolder p-1 ">Health Worker Profile</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
+        <div class="col ">
+          <div class="card shadow-sm ">
+            <img style=" height: 200px; width: 100% ;" src="{{url('/files/photo/'.$user->WorkerProfile->file)}}" alt="">
+            <div class="card-body">
+                <h4 class="text-dark">Name: {{$user->name}}</h4>
+                <p class="text-dark">User ID: {{$user->email}}</p>
+                <p class="text-dark">User ID: {{$user->WorkerProfile->reg_no}}</p>
+
+                <p class="text-dark">Address: {{$user->WorkerProfile->address}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                         <button type="button" class="btn btn-sm btn-outline-success">update profile</button>
+
+                         <button type="button" class="btn btn-success">Change Password</button>
+                    </div>
+                    {{-- <small class="text-muted">{{$member->member->gender}}</small> --}}
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    @endif
 </body>
 @endsection

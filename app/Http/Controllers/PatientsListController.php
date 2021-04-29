@@ -17,7 +17,7 @@ class PatientsListController extends Controller
 
     public function      list()
     {
-        $patients = Patientslist::all();
+        $patients = Patientslist::paginate(2);
              return view('content.patientsList', compact('patients'));
     }
 
@@ -44,7 +44,7 @@ class PatientsListController extends Controller
         //     'password'=>'required|min:6',
         // ]);
         $password="epi2021";
-$users=User::create([
+        $users=User::create([
 
                 'name'=>$request->name,
                 'email'=>$request->email,
@@ -72,7 +72,14 @@ $users=User::create([
         if($request->category=='Child')
         {
 
-            $cv=child_vaccine::all();
+
+        // dd($plist);
+        // $cv=child_vaccine::where('vaccineName'->starting_time)->get();
+
+        // dd($request-> all());
+        $cv=child_vaccine::all();
+
+
             foreach($cv as $item)
             ChildVaccineSchedule::create ([
                 'patient_id'=>$p->id,

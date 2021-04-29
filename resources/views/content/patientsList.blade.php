@@ -180,7 +180,7 @@
       @endforeach
     </tbody>
   </table>
-
+{{$patients->links()}}
 </div>
 </div>
 

@@ -1,5 +1,7 @@
 @extends('master')
 
+
+
 @section('content')
 
 <div class="title text-center mb-3  bg-primary text-dark">

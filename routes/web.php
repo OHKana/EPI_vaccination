@@ -5,7 +5,7 @@ use App\Http\Controllers\ChildVaccineScheduleController;
 use App\Http\Controllers\TeenageVaccineChartController;
 use App\Http\Controllers\PregnancyTikaChartController;
 use App\Http\Controllers\Homecontroller;
-use App\Http\Controllers\Noticescontroller;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\Servicescontroller;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\PatientsListController;
@@ -18,7 +18,7 @@ use App\Http\Controllers\PatientsProfileController;
 use App\Http\Controllers\HealthworkerProfileController;
 
 
-use App\Http\Controllers\Registrationcontroller;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TeenageVaccineScheduleController;
 
 use Illuminate\Support\Facades\Route;
@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[Homecontroller::class,'list'])->name('home');
 
-Route::get('/notices',[Noticescontroller::class,'list'])->name('notices');
+Route::get('/notice',[NoticeController::class,'list'])->name('notices');
 
 Route::get('/services',[Servicescontroller::class,'list'])->name('services');
 
@@ -70,6 +70,7 @@ Route::get('/plogout',[PatientsSignInUpController::class,'logout'])->name('logou
 Route::group(['middleware'=>'admin-auth'], function(){
 
 Route::get('/healthWorkerprofile',[HealthWorkerProfileController::class,'list'])->name('healthWorkerProfile');
+// Route::get('/notice',[NoticeController::class,'list'])->name('notices');
 
 // patients list
 Route::get('/patientsList',[PatientsListController::class,'list'])->name('patientsList');
@@ -93,12 +94,12 @@ Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])
 Route::post('/teenageVaccineChart/t',[TeenageVaccineChartController::class,'create'])->name('TeenageVaccineChart.create');
 Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
 Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
-Route::post('/teenagevaccineschedule/edit/{id}',[TeenageVaccineScheduleController::class,'edit'])->name('teenageVaccineSchedule.edit');
+Route::get('/teenagevaccineschedule/edit/{id}',[TeenageVaccineScheduleController::class,'edit'])->name('teenageVaccineSchedule.edit');
 
 // Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');
 
 // registration
-Route::get('/registration',[Registrationcontroller::class,'list'])->name('registration');
+Route::get('/report',[ReportController::class,'list'])->name('Report');
 Route::post('/registration/patient',[HealthWorkerListController::class,'create'])->name('registration.assistant');
 Route::post('/registration/assistant',[PatientsListController::class,'create'])->name('registration.patient');
 

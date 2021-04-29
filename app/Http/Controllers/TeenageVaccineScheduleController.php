@@ -34,6 +34,12 @@ class TeenageVaccineScheduleController extends Controller
     {
 
         $teenage=TeenageVaccineSchedule::find($id);
-        $vaccine=teenageVaccine::find($teenage->cv_id);
+
+        if($teenage){
+            $teenage->update([
+                'V_rcv_date'=>date("Y-m-d"),
+            ]);
+        }
+        return redirect()->back();
     }
 }

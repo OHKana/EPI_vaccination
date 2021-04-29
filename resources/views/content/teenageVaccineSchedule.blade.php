@@ -39,9 +39,11 @@
 
                         <td>
                             <div>
+                               @if(!$data->V_rcv_date)
                             <a type="button" href="{{route('teenageVaccineSchedule.edit',$data['id'])}}" class="btn btn-primary" >
                                         Get Vaccine
                             </a>
+                            @endif
 
                             </div>
 
