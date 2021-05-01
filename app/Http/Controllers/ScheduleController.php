@@ -13,7 +13,9 @@ class ScheduleController extends Controller
     {
         $check_category=(auth()->user()->userProfile->category);
         $cui=(auth()->user()->userProfile->id);
+        $info=(auth()->user()->userProfile->reg_no);
         // dd($check_category);
+        dd($info);
         if($check_category=='Child')
         {
             $doses=ChildVaccineSchedule::where('patient_id', $cui )->get();

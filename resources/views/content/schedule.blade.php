@@ -11,7 +11,11 @@ use Carbon\carbon;
 
 @if($check_category=='Child')
 
-
+<div>
+    <h2>Child Vaccine Schedule</h2>
+    <h3>Patient Name: {{(auth()->user()->userProfile->name}}</h3>
+    <h4>Registration No:{{(auth()->user()->userProfile->reg_no}}</h4>
+    <br>
     <div class=row>
     <div class="col-md-10 m-auto">
         <table class="table table-light">
@@ -52,9 +56,14 @@ use Carbon\carbon;
         </table>
     </div>
     </div>
+</div>
 
 @elseif ($check_category=='Teenage')
-
+<div>
+    <h2>Teenage Vaccine Schedule</h2>
+    <h3>Patient Name: {{$cui->patientsUser->name}}</h3>
+    <h4>Registration No:{{$cui->reg_no}}</h4>
+    <br>
     <div class="row">
 
         <div class="col-md-10 m-auto">
@@ -89,6 +98,7 @@ use Carbon\carbon;
         </div>
 
     </div>
+</div>
 
 @else
     <h1> data not found</h1>

@@ -4,7 +4,11 @@
 
 <h2 class="text-primary"> Sign In to Continue......</h2>
 
-
+@if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{ $error }}</div>
+            @endforeach
+        @endif
 
 
 

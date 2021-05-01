@@ -5,17 +5,41 @@
 
 {{-- search bar --}}
 
+<br>
+<div class="row">
+    <div class= "text-start col-md-6">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+           Register new patients
+         </button>
+        </div>
+
+<div class="col-md-6 float-end">
 
 
+<div>
+    <form action="{{route('patients.search')}}" method="get">
+
+        <div class="form-group">
+            <input type="text" name="search" placeholder="Enter patient id" class="form-control">
+            <button class="btn btn-primary position-right">Search</button>
+        </div>
+
+    </form>
+</div>
+</div>
+{{-- show result --}}
+@if(isset($search))
+<p>
+<span class="alert alert-success"> you are searching for '{{$search}}' , found ({{count($patients)}})</span>
+</p>
+@endif
+
+</div>
 
 
 <!-- Button trigger modal -->
 <br>
-<div class= "text-start">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-   Register new patients
- </button>
-</div>
+
 <!-- from starts for patients registration -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -116,19 +140,22 @@
   </div>
 
 {{-- heading --}}
-  <H1> Patients List</H1>
-<br>
 
+
+
+
+
+
+
+
+<br>
+<H1> Patients List</H1>
+<br>
 
 
 <div class="form-control container">
 
- <div class="table-responsive">
-
-    <div class="form-group">
-        <input type="text" name="search" placeholder="Enter patient id" class="form-control">
-        <button class="btn btn-success">Search</button>
-    </div>
+<div class="table-responsive">
 
 <table class="table table-light ">
 

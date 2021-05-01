@@ -74,6 +74,8 @@ Route::get('/healthWorkerprofile',[HealthWorkerProfileController::class,'list'])
 
 // patients list
 Route::get('/patientsList',[PatientsListController::class,'list'])->name('patientsList');
+Route::get('/patient/search',[PatientsListController::class,'search'])->name('patients.search');
+
 Route::get('/patientsList/checkChild/{id}',[PatientsListController::class,'checkChild'])->name('patientsList.checkChild');
 Route::get('/patientsList/checkTeenage/{id}',[PatientsListController::class,'checkTeenage'])->name('patientsList.checkTeenge');
 

@@ -17,8 +17,25 @@ class PatientsListController extends Controller
 
     public function      list()
     {
-        $patients = Patientslist::paginate(2);
+        $title='Product List';
+        $patients = Patientslist::paginate(5);
              return view('content.patientsList', compact('patients'));
+    }
+
+    public function search(Request $request)
+    {
+        $search=$request->search;
+        if($search){
+            $patients=PatientsList::where('reg_no','like','%'.$search.'%')->paginate(5);
+                            // ->orWhere('category','like','%'.$search.'%')
+        }else
+        {
+            $patients=PatientsList::paginate(5);
+        }
+
+        // where(name=%search%)
+        $title="Search result";
+        return view('content.patientsList',compact('title','patients','search'));
     }
 
     public function      checkChild($id)
