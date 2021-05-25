@@ -1,6 +1,13 @@
 @extends('master')
 
 @section('content')
+<style>
+    body
+{
+    overflow: hidden;
+}
+
+</style>
 
 @if (session()->has ('success'))
     <div class="alart alart-success">

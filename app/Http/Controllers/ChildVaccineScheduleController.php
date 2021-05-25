@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\child_vaccine;
 use App\Models\ChildVaccineSchedule;
 use App\Models\Patientslist;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 class ChildVaccineScheduleController extends Controller
@@ -39,6 +40,17 @@ class ChildVaccineScheduleController extends Controller
 
         $doses=ChildVaccineSchedule::find($id);
         $vaccine=child_vaccine::find($doses->cv_id);
+
+        $c_stock = Stock::where('child_v_id',$doses->cv_id)->first();
+        // dd($stock);
+
+        if($c_stock){
+            $c_stock->update([
+                'stock_out'=> $c_stock->stock_out + 1,
+                'available_stock'=> $c_stock->stock_in - ($c_stock->stock_out + 1)
+            ]);
+        }
+
 
         if($vaccine->N_of_dose > $doses->dose_count)
         {
@@ -80,6 +92,7 @@ class ChildVaccineScheduleController extends Controller
 
             }
             $doses->increment('dose_count');
+
         }
         return redirect()->back()->with('message','Vaccinated succecss.');
     }

@@ -71,9 +71,9 @@
                       <label for="exampleInputEmail1" class="form-label">Vaccination area:</label>
                       <select class="form-control" name="vaccinationArea" id="">
                           <option value="null">Select Ward</option>
-                          <option value="ward 1">Ward: 1</option>
-                          <option value="ward 2">Ward: 2</option>
-                          <option value="ward 3">Ward: 3</option>
+                          <option value="1">Ward: 1</option>
+                          <option value="2">Ward: 2</option>
+                          <option value="3">Ward: 3</option>
                       </select>
                   </div>
 
@@ -130,7 +130,7 @@
         <td>{{ $data->Gender}}</td>
         <td>{{ $data->Contact_nbr}}</td>
         <td>{{ $data->address}}</td>
-        <td>{{ $data->Vaccination_Area}}</td>
+        <td>ward {{ $data->Vaccination_Area}}</td>
         <td>
             <img style="width: 100px;" src="{{url('/files/photo/'.$data->file)}}" alt="">
         </td>

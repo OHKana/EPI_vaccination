@@ -20,7 +20,7 @@
     <form action="{{route('patients.search')}}" method="get">
 
         <div class="form-group">
-            <input type="text" name="search" placeholder="Enter patient id" class="form-control">
+            <input type="text" name="search" placeholder="Enter patient Registration No" class="form-control">
             <button class="btn btn-primary position-right">Search</button>
         </div>
 

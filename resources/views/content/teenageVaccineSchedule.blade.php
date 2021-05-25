@@ -2,12 +2,14 @@
 
 @section('content')
 
+<br>
+<div class= "text-start">
+    <a class="btn btn-warning" onclick="printDiv()"href="#">Print</a>
 
+</div>
+<div id="printArea">
 {{-- @dd($patients); --}}
         {{-- <h3>Patient Name: {{ $patients->patients_Name }} <span>Registration NO: {{ $patients->Registration_No }}</span></h3> --}}
-
-
-    <div>
         <h2>Teenage Vaccine Schedule</h2>
         <h3>Patient Name: {{$patients->patientsUser->name}}</h3>
         <h4>Registration No:{{$patients->reg_no}}</h4>
@@ -94,7 +96,19 @@
         </div>
     </div>
     <br>
+    <script type="text/javascript">
+        function printDiv(){
+            var printContents = document.getElementById("printArea").innerHTML;
+            var orginalContents = document.body.innerHTML;
 
+            document.body.innerHTML=printContents;
+            window.print();
+
+
+            document.body.innerHTML=orginalContents;
+
+        }
+        </script>
 
 
 

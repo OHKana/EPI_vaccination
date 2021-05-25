@@ -16,7 +16,8 @@ use App\Http\Controllers\HealthWorkerSignInUpController;
 use App\Http\Controllers\PatientsSignInUpController;
 use App\Http\Controllers\PatientsProfileController;
 use App\Http\Controllers\HealthworkerProfileController;
-
+use App\Http\Controllers\HealthworkerNoticeController;
+use App\Http\Controllers\StockUpdateController;
 
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TeenageVaccineScheduleController;
@@ -66,10 +67,21 @@ Route::post('/plogin',[PatientsSignInUpController::class,'login'])->name('login'
 Route::get('/plogout',[PatientsSignInUpController::class,'logout'])->name('logout');
 
 
-
+//admin auth
 Route::group(['middleware'=>'admin-auth'], function(){
 
+// registration
+Route::post('/registration/patient',[HealthWorkerListController::class,'create'])->name('registration.assistant');
+Route::post('/registration/assistant',[PatientsListController::class,'create'])->name('registration.patient');
+
+//profile
 Route::get('/healthWorkerprofile',[HealthWorkerProfileController::class,'list'])->name('healthWorkerProfile');
+Route::get('/healthWorkerprofile/changePassword',[HealthWorkerProfileController::class,'changePassword'])->name('changePassword');
+Route::post('/healthWorkerprofile/updatePassword',[HealthWorkerProfileController::class,'updatePassword'])->name('update.Password');
+
+//notice
+Route::get('/healthWorkerNotice',[HealthWorkerNoticeController::class,'list'])->name('healthWorkerNotices');
+Route::post('/healthWorkerNotice/create',[HealthWorkerNoticeController::class,'createNotice'])->name('create.healthWorkerNotice');
 // Route::get('/notice',[NoticeController::class,'list'])->name('notices');
 
 // patients list
@@ -100,13 +112,21 @@ Route::get('/teenagevaccineschedule/edit/{id}',[TeenageVaccineScheduleController
 
 // Route::get('/pregnancytikachart',[PregnancyTikaChartController::class,'list'])->name('pregnancyTikaChart');
 
-// registration
-Route::get('/report',[ReportController::class,'list'])->name('Report');
-Route::post('/registration/patient',[HealthWorkerListController::class,'create'])->name('registration.assistant');
-Route::post('/registration/assistant',[PatientsListController::class,'create'])->name('registration.patient');
+
+//stock
+Route::get('/stock',[StockUpdateController::class,'list'])->name('stockUpdate');
+Route::post('/stock/update',[StockUpdateController::class,'createStock'])->name('stockUpdate.create');
+
+//report
+Route::get('/report/list',[ReportController::class,'list'])->name('Report');
+Route::post('/report',[ReportController::class,'reportProcess'])->name('report.process');
+
+
 
 });
 
+
+//user auth
 Route::group(['middleware'=>'user-auth'], function(){
 
     Route::get('/patientsprofile',[PatientsProfileController::class,'list'])->name('patientsProfile');
@@ -117,19 +137,6 @@ Route::group(['middleware'=>'user-auth'], function(){
 
 });
 
-
-
-
-
-
-
-// Route::get('/patientLogedIn', function () {
-//     return view('patientLogedIn');
-// });;
-
-// Route::get('/healthWorkerLogedIn', function () {
-//     return view('healthWorkerLogedIn');
-// });;
 
 
 

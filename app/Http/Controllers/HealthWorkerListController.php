@@ -67,7 +67,7 @@ $users=User::create([
 
         $workers = HealthWorkerList::find($id);
         $user = User::find($workers->User_Id);
-        
+
         $workers->delete();
 
         $user->delete();

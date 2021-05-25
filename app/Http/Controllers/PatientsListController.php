@@ -38,14 +38,14 @@ class PatientsListController extends Controller
         return view('content.patientsList',compact('title','patients','search'));
     }
 
-    public function      checkChild($id)
+    public function checkChild($id)
     {
         $patients = Patientslist::find($id);
         $doses= ChildVaccineSchedule::where('patient_id',$id)->get();
         return view('content.childvaccineschedule', compact('patients','doses'));
     }
 
-    public function      checkTeenage($id)
+    public function checkTeenage($id)
     {
         $patients = Patientslist::find($id);
         $teenage= TeenageVaccineSchedule::where('patient_id',$id)->get();

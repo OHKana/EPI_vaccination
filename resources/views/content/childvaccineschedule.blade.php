@@ -1,9 +1,12 @@
 @extends('healthWorkerLogedIn')
 
 @section('content')
+<br>
+<div class= "text-start">
+    <a class="btn btn-warning" onclick="printDiv()"href="#">Print</a>
 
-
-<div>
+</div>
+<div id="printArea">
     <h2>Child Vaccine Schedule</h2>
         <h3>Patient Name: {{$patients->patientsUser->name}}</h3>
         <h4>Registration No:{{$patients->reg_no}}</h4>
@@ -59,49 +62,19 @@ use Carbon\carbon;
 
 
 
-<!-- Modal -->
-{{-- <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-dark" id="exampleModalLabel">Update Vaccine recived date</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> --}}
+<script type="text/javascript">
+    function printDiv(){
+        var printContents = document.getElementById("printArea").innerHTML;
+        var orginalContents = document.body.innerHTML;
+
+        document.body.innerHTML=printContents;
+        window.print();
 
 
-{{-- form --}}
-{{-- <form method="POST" action="{{route('childvaccineschedule.create')}}">
-    @csrf
+        document.body.innerHTML=orginalContents;
 
-    <div class="form-group ">
-        <label for="exampleInputPassword1">1st dose</label>
-        <input type="date" class="form-control" name="fst_d" placeholder="Enter dose Recive Date">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">2nd dose</label>
-        <input type="date" class="form-control" name="snd_d" placeholder="Enter dose Recive Date">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">3rd dose</label>
-        <input type="date" class="form-control" name="trd_d" placeholder="Enter dose Recive Date">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">4th dose</label>
-        <input type="date" class="form-control" name="fth_d" placeholder="Enter dose Recive Date">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">5th dose</label>
-        <input type="date" class="form-control" name="fifth_d" placeholder="Enter dose Recive Date">
-      </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-{{-- from end --}}
-{{-- </div>
-</div>
-</div>  --}}
-
-
+    }
+    </script>
 
 
 @endsection

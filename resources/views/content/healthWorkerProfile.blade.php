@@ -38,6 +38,36 @@
         </div>
     </div>
 
+{{-- admin profile --}}
+
+
+@if(auth()->user()->role=='admin')
+    <div class="album py-5 ">
+    <div class="container">
+        <h3 class="font-weight-bolder p-1 "> Upazila Health Officer </h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
+        <div class="col ">
+          <div class="card shadow-sm ">
+            <img style=" height: 200px; width: 100% ;" src="https://thumbs.dreamstime.com/b/smiling-female-doctor-holding-medical-records-lab-coat-her-office-clipboard-looking-camera-56673035.jpg " alt="">
+            <div class="card-body">
+                <h4 class="text-dark">Name: Tohidul</h4>
+                <p class="text-dark">User ID: 111111</p>
+                <p class="text-dark">Designation: UHO </p>
+                <p class="text-dark">Contact: 0136513644 </p>
+                <p class="text-dark">Address: Narsingdi</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    @endif
+
+
+
+
+
 
 
     {{-- health worker profile --}}
@@ -59,7 +89,7 @@
                     <div class="btn-group">
                          <button type="button" class="btn btn-sm btn-outline-success">update profile</button>
 
-                         <button type="button" class="btn btn-success">Change Password</button>
+                         <a type="button" class="btn btn-success" href="{{route('changePassword')}}">Change Password</a>
                     </div>
                     {{-- <small class="text-muted">{{$member->member->gender}}</small> --}}
                 </div>

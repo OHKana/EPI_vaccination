@@ -1,9 +1,7 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse">
 
     <div class="position-sticky pt-4">
-      <ul class="nav flex-column">
-
-
+      <ul class="nav flex-column" style="height: 100vh">
         <li class="nav-item nav-style p-3">
          <a class="nav-link active " aria-current="page" href="{{route('healthWorkerProfile')}}">
             <span data-feather="home"></span>
@@ -36,12 +34,18 @@
                Teenage Vaccine Chart
              </a>
            </li>
-        {{-- <li class="nav-item nav-style p-2">
-           <a class="nav-link " href={{route('notices')}}>
+        <li class="nav-item nav-style p-2">
+           <a class="nav-link " href={{route('healthWorkerNotices')}}>
               <span data-feather="meh"></span>
-              Notice
+              Notices
             </a>
-          </li> --}}
+          </li>
+
+        <li class="nav-item nav-style p-2">
+            <a class="nav-link " href={{route('stockUpdate')}}>
+               <span data-feather="truck"></span>
+               Stock Update
+             </a>
 
         <li class="nav-item nav-style p-2">
             <a class="nav-link " href={{route('Report')}}>

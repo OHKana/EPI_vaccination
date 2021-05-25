@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNoticeTable extends Migration
+class CreateStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateNoticeTable extends Migration
      */
     public function up()
     {
-        Schema::create('notice', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
-            $table->string('title');
-            $table->string('body');
-            $table->text('file')->nullable();
+            $table->integer('child_v_id')->nullable();
+            $table->integer('teenage_v_id')->nullable();
+            $table->integer('stock_in')->default(0);
+            $table->integer('stock_out')->default(0);
+            $table->integer('available_stock')->nullable();
 
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class CreateNoticeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notice');
+        Schema::dropIfExists('stocks');
     }
 }

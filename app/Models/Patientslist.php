@@ -9,9 +9,14 @@ class Patientslist extends Model
 {
     protected $guarded=[];
     use HasFactory;
+protected $casts = [
+    'from_date' => 'datetime',
+    'to_date' => 'datetime',
+];
+
     public function patientsUser()
         {
            return $this->belongsTo(User::class, 'user_id', 'id');
         }
-       
+
 }
