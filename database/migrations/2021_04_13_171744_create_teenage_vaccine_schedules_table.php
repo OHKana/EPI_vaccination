@@ -17,9 +17,9 @@ class CreateTeenageVaccineSchedulesTable extends Migration
             $table->id();
             $table->integer('tv_id');
             $table->integer('patient_id');
-            
-            $table->string('eligible_date')->nullable();
-            $table->string('V_rcv_date')->nullable();
+
+            $table->date('eligible_date')->nullable();
+            $table->date('V_rcv_date')->nullable();
             $table->timestamps();
         });
     }

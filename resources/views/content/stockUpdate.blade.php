@@ -3,24 +3,14 @@
 
 
 <div >
-    {{-- <div class="dropdown m-5">
-        <a class="btn btn-primary dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-interval="50">
-          Select From Here
-        </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="#">Add Teenage Vaccine</a></li>
-            <li><a class="dropdown-item" data-toggle="tab" class="dropdown-link" href="#">Add Child Vaccine</a></li>
-        </ul>
-
-  </div> --}}
-
-
+    @if(auth()->user()->role=='admin')
     <div class= "text-start">
         <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
            Add Stock
          </button>
     </div>
+    @endif
 </div>
 @if (session()->has ('success'))
     <div class="alart alart-success">

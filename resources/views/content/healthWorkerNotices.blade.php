@@ -42,17 +42,21 @@
 
         <div class="rounded-3 p-3 bg-light text-dark">
             <h1 class="">{{ $data->title }}</h1>
-            <small>Published on: {{ $data->created_at }}</small>
+            <small>Published on: {{ $data->date }}</small>
             <div class=" row">
                 <div class="col-md-2">
-                    <img src="{{$data->file_name}}" style="height: 4em">
+                    @if ($data->file)
+                    <img src="{{url('/files/photo/'.$data->file)}}" style="height: 8em">
+                    @else
+                    <img src="https://assetsds.cdnedge.bluemix.net/sites/default/files/styles/very_big_1/public/feature/images/2021/02/10/vaccine-side-effects.jpg?itok=UO7w--L0" style="height: 8em">
+                    @endif
                 </div>
                 <div class="col text-start">
-                    <p class="fs-4">{{ $data->body}}</p>
+                    <p class="fs-4">{{ $data->body }}</p>
                 </div>
-                <div>
+                {{-- <div>
                     <a class="btn btn-primary" href="">Read more...</a>
-                </div>
+                </div> --}}
             </div>
         </div>
         <hr>

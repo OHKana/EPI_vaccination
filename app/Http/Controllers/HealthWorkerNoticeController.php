@@ -7,41 +7,47 @@ use Illuminate\Http\Request;
 
 class HealthWorkerNoticeController extends Controller
 {
-    public function      list()
+    public function list()
     {
         $notice = Notice::all();
-        return view('content.healthWorkerNotices',compact('notice'));
+        // error_log('notice data :: ' + $notice);
+        return view('content.healthWorkerNotices', compact('notice'));
     }
 
-    public function createNotice()
+    // public function createNotice()
+    // {
+
+    //     return view('content.healthWorkerNotices');
+    // }
+
+    public function createNotice(Request $request)
     {
-        return view('content.healthWorkerNotices');
-    }
+        // dd($request->all());
+        $file_name = '';
 
-        public function create(Request $request)
-     {
-        $file_name='';
 
-        if($request->hasFile('Image'))
-        {
+        if ($request->hasFile('file')) {
+            // file is valid?
 
-            $file=$request->file('Image');
-            if($file->isvalid());
-            {
+            $file = $request->file('file');
+            if ($file->isvalid()); {
+                // generate unique file name
 
-                $file_name=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+                $file_name = date('Ymdhms') . '.' . $file->getClientOriginalExtension();
 
-                $file->storeAs('photo',$file_name);
+                // store image local directory
+
+                $file->storeAs('photo', $file_name);
             }
         }
-     Notice::create([
-        'date' => $request->date,
-        'title'=>$request->title,
-        'body' => $request ->body,
+        Notice::create([
+            'date' => $request->date,
+            'title' => $request->title,
+            'body' => $request->body,
 
-        'file' => $file_name,
+            'file' => $file_name,
 
-    ]);
+        ]);
 
         return redirect()->back();
     }

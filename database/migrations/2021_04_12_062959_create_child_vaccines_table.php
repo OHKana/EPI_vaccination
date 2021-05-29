@@ -17,9 +17,8 @@ class CreateChildVaccinesTable extends Migration
             $table->id();
             $table->string('V_Name');
             $table->string('disease');
-            $table->string('N_of_dose');
-            $table->string('Time_difference');
-            
+            $table->integer('N_of_dose');
+            $table->integer('Time_difference');
             $table->string('starting_time');
             $table->timestamps();
         });

@@ -11,6 +11,24 @@
         <h3>Patient Name: {{$patients->patientsUser->name}}</h3>
         <h4>Registration No:{{$patients->reg_no}}</h4>
         <br>
+
+
+
+
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
+    @endif
+
+
+
     <table class="table table-light">
         <thead>
           <tr>

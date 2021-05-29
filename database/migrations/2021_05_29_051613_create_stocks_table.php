@@ -20,7 +20,6 @@ class CreateStocksTable extends Migration
             $table->integer('stock_in')->default(0);
             $table->integer('stock_out')->default(0);
             $table->integer('available_stock')->nullable();
-
             $table->timestamps();
         });
     }
