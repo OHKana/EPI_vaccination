@@ -63,10 +63,11 @@ class ChildVaccineScheduleController extends Controller
             }
             if($doses->dose_count==1)
             {
+                // @dd((new Carbon($doses->fst_d))->addWeeks($dif));
 
-                if (  $doses->fst_d->addWeeks($dif) < Carbon::now()) {
-                    @dd($doses->fst_d->addWeeks($dif));
-                    return redirect()->back()->with('message','Can not give vaccine, wait for '.$doses->fst_d->addWeeks($dif));
+                if (  (new Carbon($doses->fst_d))->addWeeks($dif) > Carbon::now()) {
+                    // @dd('good');
+                    return redirect()->back()->with('message','Can not give vaccine, wait for '.(new Carbon($doses->fst_d))->addWeeks($dif)->format('Y-m-d'));
 
                 }
                 $doses->update([
@@ -74,11 +75,11 @@ class ChildVaccineScheduleController extends Controller
                 ]);
 
             }
-            dd('stop');
+            // dd('stop');
             if($doses->dose_count==2)
             {
-                if (  $doses->snd_d->addWeeks($dif) < Carbon::now()) {
-                    return redirect()->back()->with('message','Can not give vaccine, wait for '.$doses->snd_d->addWeeks($dif));
+                if (  (new Carbon($doses->snd_d))->addWeeks($dif) > Carbon::now()) {
+                    return redirect()->back()->with('message','Can not give vaccine, wait for '.(new Carbon($doses->snd_d))->addWeeks($dif)->format('Y-m-d'));
 
                 }
                 $doses->update([
@@ -89,8 +90,8 @@ class ChildVaccineScheduleController extends Controller
 
             if($doses->dose_count==3)
             {
-                if (  $doses->trd_d->addWeeks($dif) < Carbon::now()) {
-                    return redirect()->back()->with('message','Can not give vaccine, wait for '.$doses->trd_d->addWeeks($dif));
+                if (  (new Carbon($doses->trd_d))->addWeeks($dif) > Carbon::now()) {
+                    return redirect()->back()->with('message','Can not give vaccine, wait for '.(new Carbon($doses->trd_d))->addWeeks($dif)->format('Y-m-d'));
 
                 }
                 $doses->update([
@@ -100,8 +101,8 @@ class ChildVaccineScheduleController extends Controller
             }
             if($doses->dose_count==4)
             {
-                if (  $doses->fth_d->addWeeks($dif) < Carbon::now()) {
-                    return redirect()->back()->with('message','Can not give vaccine, wait for '.$doses->fth_d->addWeeks($dif));
+                if (  (new Carbon($doses->fth_d))->addWeeks($dif) > Carbon::now()) {
+                    return redirect()->back()->with('message','Can not give vaccine, wait for '.(new Carbon($doses->fth_d))->addWeeks($dif)->format('Y-m-d'));
 
                 }
                 $doses->update([
