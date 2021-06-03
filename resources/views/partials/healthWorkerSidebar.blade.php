@@ -5,9 +5,18 @@
         <li class="nav-item nav-style p-3">
          <a class="nav-link active " aria-current="page" href="{{route('healthWorkerProfile')}}">
             <span data-feather="home"></span>
-           Profile
+            @if(auth()->user()->role=='admin')
+            Dashboard
+            @else
+            Profile
+            @endif
+
           </a>
              </li>
+
+
+
+
         <li class="nav-item nav-style p-2">
          <a class="nav-link  "  href={{route('patientsList')}}>
             <span data-feather="at-sign"></span>

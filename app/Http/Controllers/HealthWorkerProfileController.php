@@ -1,19 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\child_vaccine;
+use App\Models\HealthWorkerList;
+use App\Models\Patientslist;
+use App\Models\Stock;
+use App\Models\teenageVaccine;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class HealthWorkerProfileController extends Controller
 {
-    public function      list()
+    public function list()
     {
         $user=auth()->user();
-        $worker=auth()->user()->WorkerProfile;
+
+        $healthWorker = HealthWorkerList::all()->count();
+        $patients = Patientslist::all()->count();
+        $c_v = child_vaccine::all()->count();
+        $t_v = teenageVaccine::all()->count();
+        $stock = Stock::all()->sum('available_stock');
+        $stockShort = Stock::where('available_stock','<',10)->count();
+
+        if ($user->role == 'admin') {
+            // dd('ok');
+
+        return view('content.healthWorkerProfile',compact(
+            'healthWorker','patients','c_v',
+            't_v','stock','stockShort'
+        ));
+
+        }
         // dd($user->);
         // dd($worker)
-        return view('content.healthWorkerProfile',compact('user', 'worker'));
+        return view('content.healthWorkerProfile',compact('user'));
      }
      public function changePassword()
     {

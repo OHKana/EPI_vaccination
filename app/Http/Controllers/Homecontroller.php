@@ -10,4 +10,6 @@ class Homecontroller extends Controller
     {
         return view('content.home');
      }
+
+     
 }
