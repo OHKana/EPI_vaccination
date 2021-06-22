@@ -14,6 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+//curd
+
+// Route::get('/UserList',[HealthWorkerListController::class,'list']);
+// Route::post('/User/create',[HealthWorkerListController::class,'create']);
+// Route::put('/User/update/{id}', [HealthWorkerListController::class, 'update']);
+// Route::delete('/User/delete/{id}', [HealthWorkerListController::class, 'delete']);
+
+
+
+
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+
+
+
+
 });
+
+
+

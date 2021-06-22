@@ -2,7 +2,7 @@
 
 @section('content')
 <br>
-<div class= "text-start">
+<div class= "text-end">
     <a class="btn btn-warning" onclick="printDiv()"href="#">Print</a>
 
 </div>

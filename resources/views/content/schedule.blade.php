@@ -7,14 +7,16 @@ use Carbon\carbon;
 
 
 @endphp
-{{-- @dd(auth()->user()->userProfile->category); --}}
+{{-- @dd(auth()->user()->userProfile); --}}
 
 @if($check_category=='Child')
 
 <div>
+    <div class="flex-item text-dark text-bold">
     <h2>Child Vaccine Schedule</h2>
-    <h3>Patient Name: {{(auth()->user()->userProfile->name}}</h3>
-    <h4>Registration No:{{(auth()->user()->userProfile->reg_no}}</h4>
+    <h3>Patient Name: {{(auth()->user()->userProfile->patientsUser->name)}}</h3>
+    <h4>Registration No:{{(auth()->user()->userProfile->reg_no)}}</h4>
+    </div>
     <br>
     <div class=row>
     <div class="col-md-10 m-auto">

@@ -15,32 +15,25 @@
 
 <br>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">
-            <h1 id="customer">
-                Welcome Back !
-              @if (auth())
-               {{auth()->user()->name}}
 
-               @else
-               {{-- {
-                    00
-               } --}}
-               <h1> sorry <h1>
-               @endif
-            </h1>
-            {{-- @dd() --}}
-            <p id="customer" style="max-width:800px text-centered">
-                From here you can view edit,update,patients details.
-
-            </p>
-        </div>
-    </div>
 
 {{-- admin profile --}}
 
+<br>
 
 @if(auth()->user()->role=='admin')
+<div class="flex-container">
+    <div class="flex-item">
+        <div class="title text-center mb-3 text-dark" style="background-color: rgba(21, 169, 228, 0.979)">
+            <h3 class="font-weight-bolder p-2">Dashboard</h3>
+        </div>
+        {{-- @dd() --}}
+        <p id="customer" style="max-width:800px text-centered">
+            From here you can view edit,update,patients details.
+
+        </p>
+    </div>
+</div>
     @include('content.adminDashboard')
 @endif
 
@@ -61,7 +54,7 @@
             <img style=" height: 200px; width: 100% ;" src="{{url('/files/photo/'.$user->WorkerProfile->file)}}" alt="">
             <div class="card-body">
                 <h4 class="text-dark">Name: {{$user->name}}</h4>
-                <p class="text-dark">User ID: {{$user->email}}</p>
+                <p class="text-dark">Email Address: {{$user->email}}</p>
                 <p class="text-dark">User ID: {{$user->WorkerProfile->reg_no}}</p>
 
                 <p class="text-dark">Address: {{$user->WorkerProfile->address}}</p>

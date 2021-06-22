@@ -24,6 +24,9 @@
                     <th scope="col">Disease Name</th>
                     <th scope="col">Starting Time</th>
                     {{-- <th scope="col">Category</th> --}}
+                    @if(auth()->user()->role=='admin')
+                    <th scope="col">Action</th>
+                    @endif
                 </tr>
             </thead>
 
@@ -37,6 +40,11 @@
                         <td>{{ $data->Schedule }}</td>
 
                         {{-- <td>{{ $data->category }}</td> --}}
+                        @if(auth()->user()->role=='admin')
+                <td>
+                    <a class="btn btn-danger" href={{route('TeenageVaccineChart.delete',$data['id'])}}>Delete</a>
+                </td>
+                @endif
                     </tr>
                 @endforeach
             </tbody>

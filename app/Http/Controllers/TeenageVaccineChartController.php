@@ -24,4 +24,14 @@ class TeenageVaccineChartController extends Controller
 
          return redirect()->back();
      }
+     public function delete($id)
+    {
+
+        $TVchart = teenageVaccine::find($id);
+
+
+        $TVchart->delete();
+
+        return redirect()->back();
+    }
  }

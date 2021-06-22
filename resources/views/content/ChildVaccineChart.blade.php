@@ -12,6 +12,7 @@
     </div>
     @endif
 
+
     <h2>Child Vaccine Chart</h2>
 
 <!-- Modal -->
@@ -85,7 +86,9 @@
                 <th scope="col">Time difference</th>
                 {{-- <th scope="col">Category</th> --}}
                 <th scope="col">Starting Time</th>
-
+                @if(auth()->user()->role=='admin')
+                <th scope="col">Action</th>
+                @endif
               </tr>
             </thead>
             <tbody>
@@ -99,7 +102,11 @@
                 <td>{{ $data->Time_difference}} weeks</td>
                 {{-- <td>{{ $data->category}}</td> --}}
                 <td>{{ $data->starting_time}} weeks</td>
-
+                @if(auth()->user()->role=='admin')
+                <td>
+                    <a class="btn btn-danger" href={{route('ChildVaccineChart.delete',$data['id'])}}>Delete</a>
+                </td>
+                @endif
               </tr>
               @endforeach
             </tbody>

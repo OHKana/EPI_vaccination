@@ -22,9 +22,20 @@ class ChildVaccineChartController extends Controller
                 'Time_difference' => $request->Time_difference,
                 'starting_time' => $request->starting_time,
 
+
             ]);
-            
+
          return redirect()->back();
         }
+        public function delete($id)
+    {
+
+        $CVchart = child_vaccine::find($id);
+
+
+        $CVchart->delete();
+
+        return redirect()->back();
+    }
 
 }

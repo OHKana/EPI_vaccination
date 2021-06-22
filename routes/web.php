@@ -99,13 +99,16 @@ Route::get('/healthworker/delete/{id}', [HealthWorkerListController::class, 'del
 // child Vaccine
 Route::get('/ChildVaccineChart',[ChildVaccineChartController::class,'list'])->name('ChildVaccineChart');
 Route::post('/ChildVaccineChart',[ChildVaccineChartController::class,'create'])->name('ChildVaccineChart.create');
+Route::get('/childVaccineChart/delete/{id}', [ChildVaccineChartController::class, 'delete'])->name('ChildVaccineChart.delete');
+
 Route::get('/childvaccineschedule',[ChildVaccineScheduleController::class,'list'])->name('childvaccineschedule');
 Route::post('/childvaccineschedule/c',[ChildVaccineScheduleController::class,'create'])->name('childvaccineschedule.create');
 Route::get('/childvaccineschedule/edit/{id}',[ChildVaccineScheduleController::class,'edit'])->name('childvaccineschedule.edit');
-
 // teenage Vaccine
 Route::get('/teenageVaccineChart',[TeenageVaccineChartController::class,'list'])->name('TeenageVaccineChart');
 Route::post('/teenageVaccineChart/t',[TeenageVaccineChartController::class,'create'])->name('TeenageVaccineChart.create');
+Route::get('/teenageVaccineChart/delete/{id}', [TeenageVaccineChartController::class, 'delete'])->name('TeenageVaccineChart.delete');
+
 Route::get('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'list'])->name('teenageVaccineSchedule');
 Route::post('/teenagevaccineschedule',[TeenageVaccineScheduleController::class,'create'])->name('teenageVaccineSchedule.create');
 Route::get('/teenagevaccineschedule/edit/{id}',[TeenageVaccineScheduleController::class,'edit'])->name('teenageVaccineSchedule.edit');

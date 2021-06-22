@@ -1,6 +1,9 @@
 @extends('healthWorkerLogedIn')
 @section('content')
-
+<br>
+<div class="title text-center mb-3 text-dark" style="background-color: rgba(21, 169, 228, 0.979)">
+    <h3 class="font-weight-bolder p-2">Stock Details</h3>
+</div>
 
 <div >
 
