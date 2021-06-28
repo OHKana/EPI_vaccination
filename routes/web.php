@@ -82,6 +82,7 @@ Route::post('/healthWorkerprofile/updatePassword',[HealthWorkerProfileController
 //notice
 Route::get('/healthWorkerNotice',[HealthWorkerNoticeController::class,'list'])->name('healthWorkerNotices');
 Route::post('/healthWorkerNotice/create',[HealthWorkerNoticeController::class,'createNotice'])->name('create.healthWorkerNotice');
+
 // Route::get('/notice',[NoticeController::class,'list'])->name('notices');
 
 // patients list

@@ -44,9 +44,9 @@
             <h1 class="">{{ $data->title }}</h1>
             <small>Published on: {{ $data->date }}</small>
             <div class=" row">
-                <div class="col-md-2">
+                <div class="col-md-4">
                     @if ($data->file)
-                    <img src="{{url('/files/photo/'.$data->file)}}" style="height: 8em">
+                    <img src="{{url('/files/photo/'.$data->file)}}" style="height: 12em">
                     @else
                     <img src="https://assetsds.cdnedge.bluemix.net/sites/default/files/styles/very_big_1/public/feature/images/2021/02/10/vaccine-side-effects.jpg?itok=UO7w--L0" style="height: 8em">
                     @endif

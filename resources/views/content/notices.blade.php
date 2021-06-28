@@ -1,8 +1,8 @@
 @extends('master')
 
 @section('content')
-
-<div class="title text-center mb-3  bg-primary text-dark">
+<br>
+<div class="title text-center mb-3  bg-secondary text-white">
     <h3 class="font-weight-bolder p-2">Notice</h3>
 </div>
 
@@ -13,14 +13,14 @@
             <h1 class="">{{ $data->title }}</h1>
             <small>Published on: {{ $data->created_at }}</small>
             <div class=" row">
-                <div class="col-md-2">
+                <div class="col-md-4">
                     @if ($data->file)
-                    <img src="{{url('/files/photo/'.$data->file)}}" style="height: 8em">
+                    <img src="{{url('/files/photo/'.$data->file)}}" style="height: 15em">
                     @else
                     <img src="https://assetsds.cdnedge.bluemix.net/sites/default/files/styles/very_big_1/public/feature/images/2021/02/10/vaccine-side-effects.jpg?itok=UO7w--L0" style="height: 8em">
                     @endif
                 </div>
-                <div class="col text-start">
+                <div class="col text-start ">
                     <p class="fs-4">{{ $data->body}}</p>
                 </div>
                 {{-- <div>

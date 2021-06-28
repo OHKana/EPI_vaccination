@@ -45,7 +45,7 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex text-center text-white bg-secondary">
+  <body class="d-flex text-center text-white bg-primary">
 
 <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 

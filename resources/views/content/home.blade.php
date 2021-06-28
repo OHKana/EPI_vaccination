@@ -34,22 +34,22 @@
       <div class="carousel-item active">
         <img class="w-100 slider-height" src="https://cdn.sanity.io/images/0vv8moc6/drugtopics/fa0ef299d4b5d2e7b19394eebe5f53476e426f84-1000x500.png?auto=format" class="d-block w-100" alt="influenza">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
+          
           <h2>IT IS THE RIGHT OF A CHILD TO BE IMMUNIZED IN FULL</h2>
         </div>
       </div>
       <div class="carousel-item">
         <img class="w-100 slider-height" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/14F41/production/_109352858_polio.jpg" class="d-block w-100" alt="Polio">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+          
+          <p>IT IS THE RIGHT OF A CHILD TO BE IMMUNIZED IN FULL</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="w-100 slider-height" src="https://thebetterindia-english.sgp1.digitaloceanspaces.com/uploads/2015/03/8437.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+          
+          <p>IT IS THE RIGHT OF A CHILD TO BE IMMUNIZED IN FULL</p>
         </div>
       </div>
     </div>
